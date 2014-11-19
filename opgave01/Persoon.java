@@ -31,7 +31,7 @@ public class Persoon
         maand = 1;
         jaar = 2000;
     }
-    
+
     /**
      * Constructor voor objecten van class Persoon
      * @param bsn   Burgerservicenummer
@@ -45,16 +45,16 @@ public class Persoon
     public Persoon(String bsn, String voornaam, String achternaam, char geslacht,
         int dag, int maand, int jaar)
     {
-        
+
         this.bsn = bsn;
         this.voornaam = voornaam;
         this.achternaam = achternaam;
         this.geslacht = geslacht;
-       // Gebruik maken van setGeboortedatum() om de datum te "setten"
-       setGeboortedatum(dag, maand, jaar);
+        // Gebruik maken van setGeboortedatum() om de datum te "setten"
+        setGeboortedatum(dag, maand, jaar);
     }
-    
-     /**
+
+    /**
      * Getter voor bsn
      * @return Burgerservicenummer
      */
@@ -62,7 +62,7 @@ public class Persoon
     {
         return bsn;
     }
-    
+
     /**
      * Getter voor voornaam
      * @return Voornaam
@@ -71,7 +71,7 @@ public class Persoon
     {
         return voornaam;
     }
-    
+
     /**
      * Getter voor achternaam
      * @return Achternaam
@@ -80,7 +80,7 @@ public class Persoon
     {
         return achternaam;
     }
-    
+
     /**
      * Getter voor geboortedatum
      * @return Geboortedatum
@@ -96,7 +96,7 @@ public class Persoon
         }
         return temp;
     }
-    
+
     /**
      * Getter voor geslacht
      * @return Geslacht
@@ -109,58 +109,97 @@ public class Persoon
             // Check of geslacht 'm' of 'M' is
             case 'm':
             case  'M':
-                temp = "Man";
-                break;
+            temp = "Man";
+            break;
             // Check of geslacht 'v' of 'M' is
             case 'v':
             case 'V':
-                temp = "Vrouw";
-                break;
+            temp = "Vrouw";
+            break;
             // Als char dus geen m / M of v / V is dan is het geslacht Onbekend
             default:
-                temp = "Onbekend";
-                break;
+            temp = "Onbekend";
+            break;
         }
         return temp;
     }
-    
+
     /**
      * Setter voor bsn
+     * @param bsn Burgerservicenummer
      */
     public void setBsn(String bsn)
     {
         this.bsn = bsn;
     }
-    
+
+    /**
+     * Setter voor geboortedatum
+     * @param dag Dag van de geboorte
+     * @param maand Maand van de geboorte
+     * @param jaar Jaar van de geboorte
+     */
     public void setGeboortedatum(int dag, int maand, int jaar)
     {
+
         // Checken of dag > 0
-        if(!(dag >= 1)){
+        if(!(dag > 0)){
             this.dag = 0;
             this.maand = 0;
             this.jaar = 0;
         }
-        // Checken of maand ligt tussen 1 - 12
+        // Checken of maand ligt tussen 0 - 13
         if(!(maand > 0 && maand <= 12)){
             this.dag = 0;
             this.maand = 0;
-            this.jaar = 0;        }
-        // Checken of jaar ligt tussen 1900 en 2100
+            this.jaar = 0;
+        }
+        // Checken of jaar ligt tussen 1899 en 2101
         if(!(jaar >= 1900 && jaar <= 2100)){
             this.dag = 0;
             this.maand = 0;
             this.jaar = 0;
         }
         
-        // Kijken of de dagen kloppen met de maand
-
+        int maxDays;
+        switch(maand)
+        {
+            case 2:
+                // if schrikkeljaar maxDays = 29
+                // als jaar deelbaar is door 4
+                // en jaar deelbaar door 400
+                // schrikkeljaar 
+                if(jaar % 4 == 0 && !(jaar % 100 == 0) || jaar % 400 == 0)
+                {
+                    maxDays = 29;
+                } else {
+                    maxDays = 28;
+                }
+                break;
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                maxDays = 31;
+                break;
+            default:
+                maxDays = 30;
+                break;
+        }
+        
+        if(dag > maxDays)
+        {
+            this.dag = 0;
+            this.maand = 0;
+            this.jaar = 0;
+        }
+        else {
+            this.dag = dag;
+            this.maand = maand;
+            this.jaar = jaar;
+        }
     }
-    
-
-    
-    
-    
-    
-
-    
 }
