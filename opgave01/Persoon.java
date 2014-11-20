@@ -17,20 +17,17 @@ public class Persoon
     private int maand;
     private int jaar;
 
-    //roelof
     /**
      * Constructor voor objecten van class Persoon
      */
     public Persoon()
     {
-        // Initialiseren van de variabelen
-        bsn = "Burgerservicenummer";
-        voornaam = "Voornaam";
-        achternaam = "Achternaam";
-        geslacht = 'M';
-        dag = 1;
-        maand = 1;
-        jaar = 2000;
+        // Initialiseren van de variabelen d.m.v. de Setters
+        setBsn("Burgerservicenummer");
+        setVoornaam("Voornaam");
+        setAchternaam("Achternaam");
+        setGeslacht('m');
+        setGeboortedatum(1,1,2000);
     }
 
     /**
@@ -46,11 +43,10 @@ public class Persoon
     public Persoon(String bsn, String voornaam, String achternaam, char geslacht,
         int dag, int maand, int jaar)
     {
-
-        this.bsn = bsn;
-        this.voornaam = voornaam;
-        this.achternaam = achternaam;
-        this.geslacht = geslacht;
+        setBsn(bsn);
+        setVoornaam(voornaam);
+        setAchternaam(achternaam);
+        setGeslacht(geslacht);
         // Gebruik maken van setGeboortedatum() om de datum te "setten"
         setGeboortedatum(dag, maand, jaar);
     }
@@ -89,8 +85,7 @@ public class Persoon
     public String getGeboortedatum()
     {
         String temp;
-        if(dag==0 && maand==0 && jaar==0)
-        {
+        if(dag==0 && maand==0 && jaar==0){
             temp = "Onbekend";
         } else {
             temp = dag + "/" + maand + "/" + jaar;
@@ -147,7 +142,34 @@ public class Persoon
     {
         this.bsn = bsn;
     }
+    
+    /**
+     * Setter voor voornaam
+     * @param voornaam Voornaam
+     */
+    public void setVoornaam(String voornaam)
+    {
+        this.voornaam = voornaam;
+    }
+    
+    /**
+     * Setter voor Achternaam
+     * @param achternaam Achternaam
+     */
+    public void setAchternaam(String achternaam)
+    {
+        this.achternaam = achternaam;
+    }
 
+    /**
+     * Setter voor Geslacht
+     * @param geslacht Geslacht
+     */
+    public void setGeslacht(char geslacht)
+    {
+       this.geslacht = geslacht;
+    }
+    
     /**
      * Setter voor geboortedatum
      * @param dag Dag van de geboorte
@@ -158,22 +180,13 @@ public class Persoon
     {
 
         // Checken of dag > 0
-        if(!(dag > 0)){
-            this.dag = 0;
-            this.maand = 0;
-            this.jaar = 0;
-        }
         // Checken of maand ligt tussen 0 - 13
-        if(!(maand > 0 && maand <= 12)){
-            this.dag = 0;
-            this.maand = 0;
-            this.jaar = 0;
-        }
         // Checken of jaar ligt tussen 1899 en 2101
-        if(!(jaar >= 1900 && jaar <= 2100)){
+        if(!(dag > 0) || !(maand > 0 && maand <= 12) || !(jaar >= 1900 && jaar <= 2100)){
             this.dag = 0;
             this.maand = 0;
             this.jaar = 0;
+            return;
         }
         
         int maxDays;
@@ -205,13 +218,11 @@ public class Persoon
                 break;
         }
         
-        if(dag > maxDays)
-        {
+        if(dag > maxDays){
             this.dag = 0;
             this.maand = 0;
             this.jaar = 0;
-        }
-        else {
+        } else {
             this.dag = dag;
             this.maand = maand;
             this.jaar = jaar;
