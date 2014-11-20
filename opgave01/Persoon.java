@@ -17,7 +17,7 @@ public class Persoon
     private int maand;
     private int jaar;
 
-    //iris
+    //roelof
     /**
      * Constructor voor objecten van class Persoon
      */
