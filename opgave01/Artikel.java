@@ -27,10 +27,10 @@ public class Artikel
      * @param String naamArtikel
      * @param double prijsArtikel
      */
-    public Artikel(String naamArtikel, double prijsArtikel)
+    public Artikel(String naam, double prijs)
     {
-        naam = naamArtikel;
-        prijs = prijsArtikel;
+        this.naam = naam;
+        this.prijs = prijs;
     }
     
     /**
@@ -64,18 +64,18 @@ public class Artikel
      * Setter voor de naam
      * @param naam Naam van het Artikel
      */
-    public void setNaam(String naamArtikel)
+    public void setNaam(String naam)
     {
-        naam = naamArtikel;
+        this.naam = naam;
     }
     
     /**
      * Setter voor de prijs
      * @param prijs Prijs van het Artikel
      */
-    public void setPrijs(Double prijsArtikel)
+    public void setPrijs(Double prijs)
     {
-        prijs = prijsArtikel;
+        this.prijs = prijs;
     }
 
 }

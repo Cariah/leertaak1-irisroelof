@@ -26,8 +26,8 @@ public class Persoon
         setBsn("Burgerservicenummer");
         setVoornaam("Voornaam");
         setAchternaam("Achternaam");
-        setGeslacht('m');
-        setGeboortedatum(1,1,2000);
+        setGeslacht('a');
+        setGeboortedatum(0,0,0);
     }
 
     /**
