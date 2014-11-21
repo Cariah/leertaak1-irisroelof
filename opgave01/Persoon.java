@@ -194,9 +194,8 @@ public class Persoon
         {
             case 2:
                 // if schrikkeljaar maxDays = 29
-                // als jaar deelbaar is door 4
-                // en jaar deelbaar door 400
-                // schrikkeljaar 
+                // Schrikkelaar = als jaar % 4 ==0  tenzij jaar % 100 == 0
+                // of jaar % 400 == 0
                 if(jaar % 4 == 0 && !(jaar % 100 == 0) || jaar % 400 == 0)
                 {
                     maxDays = 29;
