@@ -17,7 +17,7 @@ public class Persoon
     private int maand;
     private int jaar;
     private Dienblad dienblad;
-
+    
     /**
      * Constructor voor objecten van class Persoon
      */
@@ -42,7 +42,7 @@ public class Persoon
      * @param jaar  Jaar van de geboortedatum
      */
     public Persoon(String bsn, String voornaam, String achternaam, char geslacht,
-        int dag, int maand, int jaar)
+    int dag, int maand, int jaar)
     {
         setBsn(bsn);
         setVoornaam(voornaam);
@@ -120,7 +120,7 @@ public class Persoon
         }
         return temp;
     }
-    
+
     /**
      * Deze methode drukt de instantievariabelen af
      */
@@ -143,7 +143,7 @@ public class Persoon
     {
         this.bsn = bsn;
     }
-    
+
     /**
      * Setter voor voornaam
      * @param voornaam Voornaam
@@ -152,7 +152,7 @@ public class Persoon
     {
         this.voornaam = voornaam;
     }
-    
+
     /**
      * Setter voor Achternaam
      * @param achternaam Achternaam
@@ -168,9 +168,9 @@ public class Persoon
      */
     public void setGeslacht(char geslacht)
     {
-       this.geslacht = geslacht;
+        this.geslacht = geslacht;
     }
-    
+
     /**
      * Setter voor geboortedatum
      * @param dag Dag van de geboorte
@@ -189,21 +189,21 @@ public class Persoon
             this.jaar = 0;
             return;
         }
-        
+
         int maxDays;
         switch(maand)
         {
             case 2:
-                // if schrikkeljaar maxDays = 29
-                // Schrikkelaar = als jaar % 4 ==0  tenzij jaar % 100 == 0
-                // of jaar % 400 == 0
-                if(jaar % 4 == 0 && !(jaar % 100 == 0) || jaar % 400 == 0)
-                {
-                    maxDays = 29;
-                } else {
-                    maxDays = 28;
-                }
-                break;
+            // if schrikkeljaar maxDays = 29
+            // Schrikkelaar = als jaar % 4 ==0  tenzij jaar % 100 == 0
+            // of jaar % 400 == 0
+            if(jaar % 4 == 0 && !(jaar % 100 == 0) || jaar % 400 == 0)
+            {
+                maxDays = 29;
+            } else {
+                maxDays = 28;
+            }
+            break;
             case 1:
             case 3:
             case 5:
@@ -211,13 +211,13 @@ public class Persoon
             case 8:
             case 10:
             case 12:
-                maxDays = 31;
-                break;
+            maxDays = 31;
+            break;
             default:
-                maxDays = 30;
-                break;
+            maxDays = 30;
+            break;
         }
-        
+
         if(dag > maxDays){
             this.dag = 0;
             this.maand = 0;
@@ -228,4 +228,17 @@ public class Persoon
             this.jaar = jaar;
         }
     }
+
+    /**
+     * Methode om dienblad te koppelen aan een persoon
+     * @param dienblad
+     */
+    public void pakDienblad(Dienblad dienblad) {
+        //method body omitted
+        
+    }
+    
+    
+    
+    
 }
