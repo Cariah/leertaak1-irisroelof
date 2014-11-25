@@ -16,6 +16,7 @@ public class Persoon
     private int dag;
     private int maand;
     private int jaar;
+    private Dienblad dienblad;
 
     /**
      * Constructor voor objecten van class Persoon
