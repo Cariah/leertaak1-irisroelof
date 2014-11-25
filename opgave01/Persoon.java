@@ -17,7 +17,7 @@ public class Persoon
     private int maand;
     private int jaar;
     private Dienblad dienblad;
-    
+
     /**
      * Constructor voor objecten van class Persoon
      */
@@ -235,10 +235,42 @@ public class Persoon
      */
     public void pakDienblad(Dienblad dienblad) {
         //method body omitted
-        
+        this.dienblad = dienblad;
     }
-    
-    
-    
+
+    /**
+     * Methode om artikel te pakken en te plaatsen op het dienblad
+     * @param artikel
+     */
+    public void pakArtikel(Artikel artikel) {
+        //method body omitted
+        if(dienblad == null){
+            System.out.println("Er is nog geen dienblad gepakt");
+        } 
+        else {
+            dienblad.voegToe(artikel);
+        }
+    }
+
+    /**
+     * Methode om de totaalprijs van de artikelen
+     * op dienblad dat bij de persoon hoort uit te rekenen
+     * @return De totaalprijs
+     */
+    public double getTotaalPrijs() {
+        //method body omitted
+        return dienblad.getTotaalPrijs();
+    }
+
+    /**
+     * Methode om het aantal artikelen op dienblad dat bij de
+     * persoon hoort te tellen
+     * @return Het aantal artikelen
+     */
+    public int getAantalArtikelen() {
+        //method body omitted
+        return dienblad.getAantalArtikelen();
+    }
+
     
 }
