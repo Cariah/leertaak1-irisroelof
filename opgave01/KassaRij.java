@@ -37,6 +37,14 @@ public class KassaRij {
             return null;
         }
     }
+    
+    /**
+     * De geholpen persoon uit de rij verwijderen
+     */
+    public void verlaatKassaRij()
+    {
+        personen.remove(0);
+    }
 
     /**
      * Methode kijkt of er personen in de rij staan.
