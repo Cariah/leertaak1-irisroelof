@@ -234,7 +234,6 @@ public class Persoon
      * @param dienblad
      */
     public void pakDienblad(Dienblad dienblad) {
-        //method body omitted
         this.dienblad = dienblad;
     }
 
@@ -258,8 +257,10 @@ public class Persoon
      * @return De totaalprijs
      */
     public double getTotaalPrijs() {
-        //method body omitted
-        return dienblad.getTotaalPrijs();
+        if(dienblad != null){
+            return dienblad.getTotaalPrijs();
+        }
+        return 0;
     }
 
     /**
@@ -268,9 +269,10 @@ public class Persoon
      * @return Het aantal artikelen
      */
     public int getAantalArtikelen() {
-        //method body omitted
-        return dienblad.getAantalArtikelen();
+        if(dienblad != null){
+            return dienblad.getAantalArtikelen();
+        }
+        return 0;
     }
 
-    
 }
