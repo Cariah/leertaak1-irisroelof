@@ -1,11 +1,10 @@
 import java.util.ArrayList;
 
 public class KassaRij {
-    
+
     // Declareren van de variabelen
     private ArrayList<Persoon> personen;
-    
-    
+
     /**
      * Constructor
      */
@@ -46,4 +45,5 @@ public class KassaRij {
     public boolean erIsEenRij() {
         return personen.size() > 0;
     }
+    
 }
