@@ -62,6 +62,7 @@ public class Kantine
         return "Hoeveelheid Verdient: " + kassa.hoeveelheidGeldInKassa();
     }
 
+    
     /**
      * Deze methode geeft het aantal gepasseerde artikelen.
      * @return het aantal gepasseerde artikelen

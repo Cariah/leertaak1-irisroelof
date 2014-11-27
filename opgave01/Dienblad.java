@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.util.Stack;
 /**
  * Class Dienblad
  * 
@@ -10,14 +10,14 @@ import java.util.ArrayList;
 public class Dienblad {
 
     // Declareren van de variabelen
-    private ArrayList<Artikel> artikelen;
+    private Stack<Artikel> artikelen;
 
     /**
      * Default Constructor
      */
     public Dienblad() {
         // Initialiseren van de variabelen
-        artikelen = new ArrayList<Artikel>();
+        artikelen = new Stack<Artikel>();
     }
 
     /**
