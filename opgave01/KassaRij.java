@@ -2,6 +2,7 @@ import java.util.LinkedList;
 
 /**
  * KassaRij class
+ * Met de klasse Kassarij kunnen er kassarijen aangemaakt worden
  * 
  * @author Roelof Kallenkoot
  * @author Iris Meijer

@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Stack;
 /**
  * Class Dienblad
+ * Met klasse dienblad kunnen er dienbladen aangemaakt worden 
  * 
  * @author Iris Meijer
  * @author Roelof Kallenkoot

@@ -1,5 +1,6 @@
 /**
  * Class vooor de KantineSimulatie
+ * Met deze klasse wordt een kantine gesimuleerd
  * 
  * @author Iris Meijer
  * @author Roelof Kallenkoot

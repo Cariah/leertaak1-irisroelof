@@ -1,7 +1,6 @@
 
 /**
- * Write a description of class Kassa here.
- * 
+ * Met de klasse Kassa kunnen er kassa's aangemaakt worden
  * @author Roelof Kallenkoot 
  * @author Iris Meijer
  * @version 25/11/2014
