@@ -33,10 +33,6 @@ public class Kassa
     public void rekenAf(Persoon persoon) {
         geldInKassa = geldInKassa + persoon.getTotaalPrijs();
         aantalArtikelen = aantalArtikelen + persoon.getAantalArtikelen();
-        System.out.println("###############");
-        System.out.println("# Totaalprijs: " + persoon.getTotaalPrijs());
-        System.out.println("# Aantal artikelen: " + persoon.getAantalArtikelen());
-        System.out.println("###############");
         kassarij.verlaatKassaRij();
     }
 
