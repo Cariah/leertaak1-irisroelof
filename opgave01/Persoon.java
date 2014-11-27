@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Persoon here.
+ * Met deze klasse kunnen personen aangemaakt worden
  * 
  * @author Roelof Kallenkoot
  * @author Iris Meijer

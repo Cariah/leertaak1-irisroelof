@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Artikel here.
+ * Met deze klasse worden artikelen aangemaakt
  * 
  * @author Iris Meijer
  * @author Roelof Kallenkoot
@@ -24,8 +24,8 @@ public class Artikel
     
     /**
      * Constructor for objects of class Artikel
-     * @param String naamArtikel
-     * @param double prijsArtikel
+     * @param String naam
+     * @param double prijs
      */
     public Artikel(String naam, double prijs)
     {
@@ -35,6 +35,7 @@ public class Artikel
     
     /**
      * Getter voor de Naam
+     * @return naam
      */
     public String getNaam()
     {
@@ -43,6 +44,7 @@ public class Artikel
     
     /**
      * Getter voor de Prijs
+     * @return prijs
      */
     public double getPrijs()
     {

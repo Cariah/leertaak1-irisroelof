@@ -1,6 +1,7 @@
 
 /**
  * Kantine class.
+ * Met de klasse kantine kunnen kantine's aangemaakt worden
  * 
  * @author Iris Meijer
  * @author Roelof Kallenkoot
