@@ -3,7 +3,8 @@
  * Write a description of class Kassa here.
  * 
  * @author Roelof Kallenkoot 
- * @version (a version number or a date)
+ * @author Iris Meijer
+ * @version 25/11/2014
  */
 public class Kassa
 {
@@ -30,7 +31,6 @@ public class Kassa
      * @param persoon die moet afrekenen
      */
     public void rekenAf(Persoon persoon) {
-        //method body omitted
         geldInKassa = geldInKassa + persoon.getTotaalPrijs();
         aantalArtikelen = aantalArtikelen + persoon.getAantalArtikelen();
         System.out.println("###############");
@@ -48,7 +48,6 @@ public class Kassa
      * @return aantal artikelen
      */
     public int aantalArtikelen() {
-        //method body omitted
         return aantalArtikelen;
     }
 
@@ -59,7 +58,6 @@ public class Kassa
      * @return hoeveelheid geld in de kassa
      */
     public double hoeveelheidGeldInKassa() {
-        //method body omitted
         return geldInKassa;
     }
 

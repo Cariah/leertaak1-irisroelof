@@ -1,15 +1,16 @@
 
 /**
- * Write a description of class Kantine here.
+ * Kantine class.
  * 
  * @author Iris Meijer
  * @author Roelof Kallenkoot
- * @version (a version number or a date)
+ * @version 25/11/2014
  */
 public class Kantine
 {
     private Kassa kassa;
     private KassaRij kassarij;
+    
     /**
      * Constructor
      */
@@ -20,15 +21,13 @@ public class Kantine
 
     /**
      * In deze methode wordt een Persoon en Dienblad
-     * gemaakt en aan elkaar
-     * gekoppeld. Maak twee Artikelen aan en plaats
-     * deze op het dienblad.
+     * gemaakt en aan elkaar gekoppeld. Maak twee Artikelen aan 
+     * en plaats deze op het dienblad.
      * Tenslotte sluit de Persoon zich aan bij de rij
      * voor de kassa.
      */
     public void loopPakSluitAan() {
-        //omitted
-        Persoon persoon = new Persoon("BSN", "Iris", "Meijer", 'V', 20, 6,1997);
+        Persoon persoon = new Persoon();
         Dienblad dienblad = new Dienblad();
         persoon.pakDienblad(dienblad);
 
@@ -45,14 +44,13 @@ public class Kantine
      */
     public void verwerkRijVoorKassa() {
         /* Opgave 5b
-        /*
+         *
          * De while lus stopt pas wanneer er niemand meer in de KassaRij staat.
          * De for lus stopt nadat de laatste van de rij die er toen was, is verwerkt.
          * Iedereen die daarna aansluit, wordt dan niet meer geholpen.
          */ 
         while(kassarij.erIsEenRij()) {
             kassa.rekenAf(kassarij.eerstePersoonInRij());
-            System.out.println("Verlaat rij");
         }
     }
 
@@ -61,16 +59,14 @@ public class Kantine
      * @return hoeveelheid geld in kassa
      */
     public double hoeveelheidGeldInKassa() {
-        //omitted
         return kassa.hoeveelheidGeldInKassa();
-    }
+    }e
 
     /**
      * Deze methode geeft het aantal gepasseerde artikelen.
      * @return het aantal gepasseerde artikelen
      */
     public int aantalArtikelen(){
-        //omitted
         return kassa.aantalArtikelen();
     }
 
@@ -80,7 +76,6 @@ public class Kantine
      * en "leegt" de inhoud van de kassa.
      */
     public void resetKassa() {
-        // omitted
         kassa.resetKassa();
     }
 }

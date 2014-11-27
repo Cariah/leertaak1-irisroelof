@@ -1,5 +1,12 @@
 import java.util.ArrayList;
 
+/**
+ * KassaRij class
+ * 
+ * @author Roelof Kallenkoot
+ * @author Iris Meijer
+ * @version 25/11/2014
+ */
 public class KassaRij {
 
     // Declareren van de variabelen
@@ -18,7 +25,6 @@ public class KassaRij {
      * @param persoon
      */
     public void sluitAchteraan(Persoon persoon) {
-        //method body omitted
         personen.add(persoon);
     }
 
@@ -29,7 +35,6 @@ public class KassaRij {
      * @return Eerste persoon in de rij of null
      */
     public Persoon eerstePersoonInRij() {
-        //method body omitted
         // if iemand in de rij return persoon;
         if(erIsEenRij()){
             return personen.get(0);
@@ -39,7 +44,7 @@ public class KassaRij {
     }
     
     /**
-     * De geholpen persoon uit de rij verwijderen
+     * Verwijderd het eerste persoon uit de rij
      */
     public void verlaatKassaRij()
     {
@@ -48,7 +53,7 @@ public class KassaRij {
 
     /**
      * Methode kijkt of er personen in de rij staan.
-     * @return Of er wel of geen rij bestaat
+     * @return Of er wel of geen rij bestaat (true/false)
      */
     public boolean erIsEenRij() {
         return personen.size() > 0;
