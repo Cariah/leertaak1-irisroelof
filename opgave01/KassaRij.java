@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  * KassaRij class
@@ -10,14 +10,14 @@ import java.util.ArrayList;
 public class KassaRij {
 
     // Declareren van de variabelen
-    private ArrayList<Persoon> personen;
+    private LinkedList<Persoon> personen;
 
     /**
      * Constructor
      */
     public KassaRij() {
         // Initialiseren van de variabelen
-        personen = new ArrayList<Persoon>();
+        personen = new LinkedList<Persoon>();
     }
 
     /**
