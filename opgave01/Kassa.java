@@ -24,17 +24,15 @@ public class Kassa
     }
 
     /**
-     * vraag het aantal artikelen en de totaalprijs op.
-     * De implementatie wordt later vervangen
-     * door een echte betaling door de persoon.
+     * Telt de prijs die de persoon moet betalen bij geldInKassa op
+     * Telt het aantal artikelen die de persoon koopt op bij aantalArtikelen
+     * 
+     * Vanuit deze methode wordt de betaling afgehandeld
      * @param persoon die moet afrekenen
      */
     public void rekenAf(Persoon persoon) {
         geldInKassa = geldInKassa + persoon.getTotaalPrijs();
         aantalArtikelen = aantalArtikelen + persoon.getAantalArtikelen();
-        // kassarij.eersteUitDeRij zorgt ervoor 
-        // dat de eerste persoon uit de kassaRij wordt verwijderd
-        kassarij.eersteUitDeRij();
     }
 
     /**
