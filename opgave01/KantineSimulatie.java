@@ -39,9 +39,11 @@ public class KantineSimulatie {
              * reset de kassa voor de volgende dag
              */
             kantine.verwerkRijVoorKassa();
-            System.out.println("Hoeveelheid geld in Kassa: " + kantine.hoeveelheidGeldInKassa());
-            System.out.println("Hoeveelheid artikelen gepasseerd: " + kantine.aantalArtikelen());
-            kantine.resetKassa();
+            Kassa kassa = kantine.getKassa();
+            
+            System.out.println("Hoeveelheid geld in Kassa: " + kassa.hoeveelheidGeldInKassa());
+            System.out.println("Hoeveelheid artikelen gepasseerd: " + kassa.aantalArtikelen());
+            kassa.resetKassa();
         }
     }
 }
