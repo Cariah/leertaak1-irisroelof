@@ -31,12 +31,12 @@ public class Kantine
         Persoon persoon = new Persoon();
         Dienblad dienblad = new Dienblad();
         persoon.pakDienblad(dienblad);
-
+        
         Artikel optimel = new Artikel("Optimel", 1.87);
         Artikel water = new Artikel("H2o", 0.95);
 
-        persoon.pakArtikel(optimel);
-        persoon.pakArtikel(water);
+        dienblad.voegToe(optimel);
+        dienblad.voegToe(water);
         kassarij.sluitAchteraan(persoon);
     }
 
@@ -56,30 +56,13 @@ public class Kantine
             kassa.rekenAf(kassarij.eerstePersoonInRij());
         }
     }
-
-    /**
-     * Deze methode telt het geld uit de kassa
-     * @return Double hoeveelheid geld in kassa
-     */
-    public double hoeveelheidGeldInKassa() {
-        return kassa.hoeveelheidGeldInKassa();
-    }
-
     
     /**
-     * Deze methode geeft het aantal gepasseerde artikelen.
-     * @return int het aantal gepasseerde artikelen
+     * Retourneerd de private instantie van kassa
+     * @return Kassa de Kassa die wordt gebruikt in de Kantine
      */
-    public int aantalArtikelen(){
-        return kassa.aantalArtikelen();
-    }
-
-    /**
-     * Deze methode reset de bijgehouden telling van
-     * het aantal artikelen
-     * en "leegt" de inhoud van de kassa.
-     */
-    public void resetKassa() {
-        kassa.resetKassa();
+    public Kassa getKassa()
+    {
+        return this.kassa;
     }
 }

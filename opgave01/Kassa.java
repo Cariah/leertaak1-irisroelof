@@ -1,3 +1,4 @@
+import java.util.Iterator;
 
 /**
  * Met de klasse Kassa kunnen er kassa's aangemaakt worden
@@ -31,8 +32,15 @@ public class Kassa
      * @param persoon die moet afrekenen
      */
     public void rekenAf(Persoon persoon) {
-        geldInKassa = geldInKassa + persoon.getTotaalPrijs();
-        aantalArtikelen = aantalArtikelen + persoon.getAantalArtikelen();
+        Dienblad dienblad = persoon.getDienblad();
+        
+        Iterator<Artikel> artikelen = dienblad.getArtikelen();
+        while(artikelen.hasNext()){
+            Artikel artikel = artikelen.next();
+            aantalArtikelen += 1;
+            geldInKassa += artikel.getPrijs();
+        }
+        
     }
 
     /**

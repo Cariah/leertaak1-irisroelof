@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Stack;
+import java.util.Iterator;
+
 /**
  * Class Dienblad
  * Met klasse dienblad kunnen er dienbladen aangemaakt worden 
@@ -29,6 +31,11 @@ public class Dienblad {
         artikelen.add(artikel);
     }
 
+    public Iterator<Artikel> getArtikelen()
+    {
+        return artikelen.iterator();
+    }
+    
     /**
      * Methode om aantal artikelen op dienblad te tellen
      * @return Het aantal artikelen op het dienblad

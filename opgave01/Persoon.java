@@ -120,6 +120,16 @@ public class Persoon
         }
         return temp;
     }
+    
+    /**
+     * Retourneerd de private instantie van Dienblad die
+     * wordt gebruikt door de Persoon
+     * @return Dienblad
+     */
+    public Dienblad getDienblad()
+    {
+        return this.dienblad;
+    }
 
     /**
      * Deze methode drukt de instantievariabelen af
@@ -237,40 +247,6 @@ public class Persoon
         this.dienblad = dienblad;
     }
 
-    /**
-     * Methode om artikel te pakken en te plaatsen op het dienblad
-     * @param artikel
-     */
-    public void pakArtikel(Artikel artikel) {
-        if(dienblad != null){
-            dienblad.voegToe(artikel);
-        }
-        // zouden eventueel nog een else toe kunnen voegen
-        // die 'uitprint' dat er nog geen dienblad is gepakt.
-    }
 
-    /**
-     * Methode om de totaalprijs van de artikelen
-     * op dienblad dat bij de persoon hoort uit te rekenen
-     * @return De totaalprijs
-     */
-    public double getTotaalPrijs() {
-        if(dienblad != null){
-            return dienblad.getTotaalPrijs();
-        }
-        return 0;
-    }
-
-    /**
-     * Methode om het aantal artikelen op dienblad dat bij de
-     * persoon hoort te tellen
-     * @return Het aantal artikelen
-     */
-    public int getAantalArtikelen() {
-        if(dienblad != null){
-            return dienblad.getAantalArtikelen();
-        }
-        return 0;
-    }
 
 }
