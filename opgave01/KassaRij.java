@@ -11,10 +11,13 @@ import java.util.LinkedList;
 public class KassaRij {
 
     // Declareren van de variabelen
+    // Bij opgave 3 was dit een ArrayList<Persoon>
+    // Maar bij opgave 7 moest dit worden 
+    // veranderd naar een LinkedList<Persoon>
     private LinkedList<Persoon> personen;
 
     /**
-     * Constructor
+     * Default Constructor
      */
     public KassaRij() {
         // Initialiseren van de variabelen
@@ -36,20 +39,12 @@ public class KassaRij {
      * @return Eerste persoon in de rij of null
      */
     public Persoon eerstePersoonInRij() {
-        // if iemand in de rij return persoon;
+        // if 'iemand in de rij' return persoon anders null
         if(erIsEenRij()){
             return personen.get(0);
         } else {
             return null;
         }
-    }
-    
-    /**
-     * Verwijderd het eerste persoon uit de rij
-     */
-    public void verlaatKassaRij()
-    {
-        personen.remove(0);
     }
 
     /**
@@ -58,6 +53,14 @@ public class KassaRij {
      */
     public boolean erIsEenRij() {
         return personen.size() > 0;
+    }
+    
+    /**
+     * Verwijderd het eerste persoon uit de rij
+     */
+    public void eersteUitDeRij()
+    {
+        personen.remove(0);
     }
     
 }

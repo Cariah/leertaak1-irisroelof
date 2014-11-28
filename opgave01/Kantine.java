@@ -37,7 +37,7 @@ public class Kantine
 
         persoon.pakArtikel(optimel);
         persoon.pakArtikel(water);
-        this.kassarij.sluitAchteraan(persoon);
+        kassarij.sluitAchteraan(persoon);
     }
 
     /**
@@ -49,6 +49,8 @@ public class Kantine
          * De while lus stopt pas wanneer er niemand meer in de KassaRij staat.
          * De for lus stopt nadat de laatste van de rij die er toen was, is verwerkt.
          * Iedereen die daarna aansluit, wordt dan niet meer geholpen.
+         * 
+         * We maken dus gebruik van 'Onbepaalde Iteratie'
          */ 
         while(kassarij.erIsEenRij()) {
             kassa.rekenAf(kassarij.eerstePersoonInRij());
@@ -57,19 +59,19 @@ public class Kantine
 
     /**
      * Deze methode telt het geld uit de kassa
-     * @return hoeveelheid geld in kassa
+     * @return String hoeveelheid geld in kassa
      */
     public String hoeveelheidGeldInKassa() {
-        return "Hoeveelheid Verdient: " + kassa.hoeveelheidGeldInKassa();
+        return "Hoeveelheid geld in Kassa: " + kassa.hoeveelheidGeldInKassa();
     }
 
     
     /**
      * Deze methode geeft het aantal gepasseerde artikelen.
-     * @return het aantal gepasseerde artikelen
+     * @return String het aantal gepasseerde artikelen
      */
     public String aantalArtikelen(){
-        return "Hoeveelheid verkocht: " + kassa.aantalArtikelen();
+        return "Hoeveelheid artikelen gepasseerd: " + kassa.aantalArtikelen();
     }
 
     /**

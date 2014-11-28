@@ -32,14 +32,15 @@ public class Kassa
     public void rekenAf(Persoon persoon) {
         geldInKassa = geldInKassa + persoon.getTotaalPrijs();
         aantalArtikelen = aantalArtikelen + persoon.getAantalArtikelen();
-        kassarij.verlaatKassaRij();
+        // kassarij.eersteUitDeRij zorgt ervoor 
+        // dat de eerste persoon uit de kassaRij wordt verwijderd
+        kassarij.eersteUitDeRij();
     }
 
     /**
      * Geeft het aantal artikelen dat de kassa
-     * heeft gepasseerd,
-     * vanaf het moment dat de methode resetWaarden
-     * is aangeroepen.
+     * heeft gepasseerd, vanaf het moment 
+     * dat de methode resetWaarden is aangeroepen.
      * @return aantal artikelen
      */
     public int aantalArtikelen() {
