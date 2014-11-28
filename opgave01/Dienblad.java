@@ -31,7 +31,7 @@ public class Dienblad {
 
     /**
      * Methode om aantal artikelen op dienblad te tellen
-     * @return Het aantal artikelen 
+     * @return Het aantal artikelen op het dienblad
      */
     public int getAantalArtikelen() {
         return artikelen.size();
@@ -39,7 +39,7 @@ public class Dienblad {
 
     /**
      * Methode om de totaalprijs van de artikelen 
-     * op dienblad uit te rekenen
+     * op het dienblad uit te rekenen
      * @return De totaalprijs
      */
     public double getTotaalPrijs() {

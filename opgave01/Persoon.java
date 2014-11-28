@@ -242,13 +242,11 @@ public class Persoon
      * @param artikel
      */
     public void pakArtikel(Artikel artikel) {
-        //method body omitted
-        if(dienblad == null){
-            System.out.println("Er is nog geen dienblad gepakt");
-        } 
-        else {
+        if(dienblad != null){
             dienblad.voegToe(artikel);
         }
+        // zouden eventueel nog een else toe kunnen voegen
+        // die 'uitprint' dat er nog geen dienblad is gepakt.
     }
 
     /**
