@@ -41,7 +41,7 @@ public class KassaRij {
     public Persoon eerstePersoonInRij() {
         // if 'iemand in de rij' return persoon anders null
         if(erIsEenRij()){
-            return personen.get(0);
+            return personen.remove(0);
         } else {
             return null;
         }
@@ -53,14 +53,6 @@ public class KassaRij {
      */
     public boolean erIsEenRij() {
         return personen.size() > 0;
-    }
-    
-    /**
-     * Verwijderd het eerste persoon uit de rij
-     */
-    public void eersteUitDeRij()
-    {
-        personen.remove(0);
     }
     
 }
