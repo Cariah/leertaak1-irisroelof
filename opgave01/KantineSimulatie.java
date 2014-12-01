@@ -110,6 +110,10 @@ public class KantineSimulatie {
             // laat de personen maar komen...
             for(int j=0;j<aantalpersonen;j++) {
                 // maak persoon en dienblad aan, koppel ze
+                Persoon persoon = new Persoon();
+                Dienblad dienblad = new Dienblad();
+                persoon.pakDienblad(dienblad);
+                
                 // bedenk hoeveel artikelen worden gepakt
                 int aantalartikelen = 2;
 
@@ -119,12 +123,22 @@ public class KantineSimulatie {
 
                 // vind de artikelnamen op basis van 
                 // de indexen hierboven
-                String[] artikelen=geefArtikelNamen(tepakken);
-
+                String[] artikelen = geefArtikelNamen(tepakken);
+                
                 // loop de kantine binnen, pak de gewenste 
                 // artikelen, sluit aan
+                kantine.loopPakSluitAan(persoon, artikelen);
             }
-
+            kantine.verwerkRijVoorKassa();
+            
+            Kassa kassa = kantine.getKassa();
+            
+            // Druk de dagtotalen af
+            System.out.println("Hoeveelheid geld in Kassa: " + kassa.hoeveelheidGeldInKassa());
+            System.out.println("Hoeveelheid artikelen gepasseerd: " + kassa.aantalArtikelen());
+            
+            // Reset de waardes van de Kassa.
+            kassa.resetKassa();
             // verwerk rij voor de kassa
             // druk de dagtotalen af en hoeveel personen binnen 
             // zijn gekomen
