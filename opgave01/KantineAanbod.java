@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @version 01/12/2014
  */
 public class KantineAanbod {
-
+    //hoi
     // interne opslag voorraad
     private HashMap<String, ArrayList<Artikel>> aanbod;
 
