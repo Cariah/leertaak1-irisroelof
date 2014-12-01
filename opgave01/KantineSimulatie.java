@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * Class vooor de KantineSimulatie
  * Met deze klasse wordt een kantine gesimuleerd
@@ -6,7 +8,6 @@
  * @author Roelof Kallenkoot
  * @version 27/11/2014
  */
-import java.util.*;
 
 public class KantineSimulatie {
     // kantine
@@ -19,7 +20,7 @@ public class KantineSimulatie {
     private Random random;
 
     // aantal artikelen
-    private static final int AANTAL_ARTIKELEN=4;
+    private static final int AANTAL_ARTIKELEN = 4;
 
     // artikelen
     private static final String[] artikelnamen=
@@ -30,27 +31,27 @@ public class KantineSimulatie {
         new double[]{1.50, 2.10, 1.65, 1.65};   
 
     // minimum en maximum aantal artikelen per soort
-    private static final int MIN_ARTIKELEN_PER_SOORT=10000;
-    private static final int MAX_ARTIKELEN_PER_SOORT=20000;
+    private static final int MIN_ARTIKELEN_PER_SOORT = 10000;
+    private static final int MAX_ARTIKELEN_PER_SOORT = 20000;
 
     // minimum en maximum aantal personen per dag
-    private static final int MIN_PERSONEN_PER_DAG=50;
-    private static final int MAX_PERSONEN_PER_DAG=100;
+    private static final int MIN_PERSONEN_PER_DAG = 50;
+    private static final int MAX_PERSONEN_PER_DAG = 100;
 
     // minimum en maximum artikelen per persoon
-    private static final int MIN_ARTIKELEN_PER_PERSOON=1;
-    private static final int MAX_ARTIKELEN_PER_PERSOON=4;
+    private static final int MIN_ARTIKELEN_PER_PERSOON = 1;
+    private static final int MAX_ARTIKELEN_PER_PERSOON = 4;
 
     /**
      * Constructor
      */
     public KantineSimulatie(){
-        kantine=new Kantine();
-        random=new Random();
-        int[] hoeveelheden=getRandomArray(
+        kantine = new Kantine();
+        random = new Random();
+        int[] hoeveelheden = getRandomArray(
                 AANTAL_ARTIKELEN,MIN_ARTIKELEN_PER_SOORT, MAX_ARTIKELEN_PER_SOORT);
-        kantineaanbod=new KantineAanbod(artikelnamen, artikelprijzen, 
-            hoeveelheden); 
+                
+        kantineaanbod = new KantineAanbod(artikelnamen, artikelprijzen, hoeveelheden); 
         kantine.setKantineAanbod(kantineaanbod);
     }
 
@@ -63,9 +64,9 @@ public class KantineSimulatie {
      * @return De array met random getallen
      */
     private int[] getRandomArray(int lengte, int min, int max) {
-        int[] temp=new int[lengte];
-        for(int i=0;i<lengte;i++) {
-            temp[i]=getRandomValue(min, max);
+        int[] temp = new int[lengte];
+        for(int i=0;i < lengte;i++) {
+            temp[i] = getRandomValue(min, max);
         }
         return temp;
     }
@@ -88,9 +89,9 @@ public class KantineSimulatie {
      * @return De array met artikelnamen
      */
     private String[] geefArtikelNamen(int[] indexen) {
-        String[] artikelen=new String[indexen.length];
-        for(int i=0;i<indexen.length;i++) { 
-            artikelen[i]=artikelnamen[indexen[i]];
+        String[] artikelen = new String[indexen.length];
+        for(int i=0;i < indexen.length;i++) { 
+            artikelen[i] = artikelnamen[indexen[i]];
         }
         return artikelen;
     }
@@ -102,19 +103,19 @@ public class KantineSimulatie {
      */
     public void simuleer(int dagen) {
         // for lus voor dagen
-        for(int i=0;i<dagen;i++) {
+        for(int i=0; i < dagen;i++) {
             // bedenk hoeveel personen vandaag binnen lopen
-            int aantalpersonen=...
+            int aantalpersonen = 5;
 
             // laat de personen maar komen...
             for(int j=0;j<aantalpersonen;j++) {
                 // maak persoon en dienblad aan, koppel ze
                 // bedenk hoeveel artikelen worden gepakt
-                int aantalartikelen=...
+                int aantalartikelen = 2;
 
                 // genereer de “artikelnummers”, dit zijn indexen 
                 // van de artikelnamen array  
-                int[] tepakken=getRandomArray(aantalartikelen, 0, AANTAL_ARTIKELEN-1);
+                int[] tepakken = getRandomArray(aantalartikelen, 0, AANTAL_ARTIKELEN-1);
 
                 // vind de artikelnamen op basis van 
                 // de indexen hierboven
