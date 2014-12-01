@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @version 01/12/2014
  */
 public class KantineAanbod {
-    //hoi
+    
     // interne opslag voorraad
     private HashMap<String, ArrayList<Artikel>> aanbod;
 
@@ -53,9 +53,9 @@ public class KantineAanbod {
         } else {
             // Wat hier gebeurt kunnen we doen met stapel.remove(0);
             // Zonder een 'tijdelijke' variabele te gebruiken
-            Artikel a = stapel.get(0);
-            stapel.remove(0);
-            return a;
+            
+            return stapel.remove(0);
+            
         }
     }
 

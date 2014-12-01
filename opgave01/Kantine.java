@@ -11,6 +11,7 @@ public class Kantine
 {
     private Kassa kassa;
     private KassaRij kassarij;
+    private KantineAanbod kantineaanbod;
     
     /**
      * Constructor
@@ -64,5 +65,23 @@ public class Kantine
     public Kassa getKassa()
     {
         return this.kassa;
+    }
+    
+    /**
+     * Retourneerd de private instantie van kantineaanbod
+     * @return het kantineaanbod
+     */
+    public KantineAanbod getKantineAanbod()
+    {
+        return kantineaanbod;
+    }
+    
+    /**
+     * Wijzigd het kantineaanbod
+     * @param Er wordt een kantineaanbod verwacht
+     */
+    public void setKantineAanbod(KantineAanbod kantineaanbod)
+    {
+        this.kantineaanbod = kantineaanbod;
     }
 }
