@@ -5,7 +5,7 @@
  * 
  * @author Iris Meijer
  * @author Roelof Kallenkoot
- * @version 25/11/2014
+ * @version 01/12/2014
  */
 public class Kantine
 {
@@ -22,12 +22,11 @@ public class Kantine
     }
 
     /**
-     * In deze methode wordt een Persoon en Dienblad
-     * gemaakt en aan elkaar gekoppeld. Maak twee Artikelen aan 
-     * en plaats deze op het dienblad.
-     * Tenslotte sluit de Persoon zich aan bij de rij
-     * voor de kassa.
-     * Deze methode koppelt de artikelen
+     * In deze methode worden de artikelen bij de artikelnamen gezocht
+     * en worden deze aan het dienblad van het meegegeven persoon gekoppelt
+     * indien deze persoon een dienblad heeft.
+     * Als het meegegeven persoon minstens 1 artikel op het dienblad heeft,
+     * sluit deze persoon achteraan in de rij.
      */
     public void loopPakSluitAan(Persoon persoon, String[] artikelnamen) {
         

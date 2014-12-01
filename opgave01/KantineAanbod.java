@@ -51,11 +51,7 @@ public class KantineAanbod {
         if (stapel == null || stapel.size() == 0) {
             return null;
         } else {
-            // Wat hier gebeurt kunnen we doen met stapel.remove(0);
-            // Zonder een 'tijdelijke' variabele te gebruiken
-            
             return stapel.remove(0);
-            
         }
     }
 
