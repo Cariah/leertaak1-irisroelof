@@ -28,16 +28,11 @@ public class Kantine
      * Tenslotte sluit de Persoon zich aan bij de rij
      * voor de kassa.
      */
-    public void loopPakSluitAan() {
-        Persoon persoon = new Persoon();
-        Dienblad dienblad = new Dienblad();
-        persoon.pakDienblad(dienblad);
+    public void loopPakSluitAan(Persoon persoon, String[] artikelnamen) {
         
-        Artikel optimel = new Artikel("Optimel", 1.87);
-        Artikel water = new Artikel("H2o", 0.95);
-
-        dienblad.voegToe(optimel);
-        dienblad.voegToe(water);
+        Dienblad dienblad = persoon.getDienblad();
+                
+        
         kassarij.sluitAchteraan(persoon);
     }
 
