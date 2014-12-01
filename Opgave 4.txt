@@ -1,0 +1,2 @@
+In de primitieve types worden direct opgeslagen in de variabelen. Ze maken dus gebruikt van directe opslag.
+Variabelen worden verwezen naar objecten.
