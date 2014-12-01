@@ -31,7 +31,10 @@ public class Kantine
     public void loopPakSluitAan(Persoon persoon, String[] artikelnamen) {
         
         Dienblad dienblad = persoon.getDienblad();
-                
+        
+        for(int i = 0;i < artikelnamen.length; i++){
+            dienblad.voegToe(kantineaanbod.getArtikel(artikelnamen[i]));
+        }
         
         kassarij.sluitAchteraan(persoon);
     }

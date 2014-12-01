@@ -31,7 +31,10 @@ public class KantineSimulatie {
              * for lus voor personen
              */
             for(int j=0;j < 10+i;j++){
-                kantine.loopPakSluitAan();
+                Persoon persoon = new Persoon();
+                String[] artikelnamen = {"Optimel", "Water"};
+                
+                kantine.loopPakSluitAan(persoon, artikelnamen);
             }
             /*
              * verwerk rij voor de kassa
