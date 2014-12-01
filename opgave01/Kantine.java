@@ -27,16 +27,22 @@ public class Kantine
      * en plaats deze op het dienblad.
      * Tenslotte sluit de Persoon zich aan bij de rij
      * voor de kassa.
+     * Deze methode koppelt de artikelen
      */
     public void loopPakSluitAan(Persoon persoon, String[] artikelnamen) {
         
         Dienblad dienblad = persoon.getDienblad();
-        
-        for(int i = 0;i < artikelnamen.length; i++){
-            dienblad.voegToe(kantineaanbod.getArtikel(artikelnamen[i]));
+        if(dienblad != null){
+            for(int i = 0;i < artikelnamen.length; i++){
+                Artikel artikel = kantineaanbod.getArtikel(artikelnamen[i]);
+                if(artikel != null){
+                    dienblad.voegToe(artikel);
+                }
+            }
+            if(dienblad.getAantalArtikelen() > 0){
+                kassarij.sluitAchteraan(persoon);
+            }
         }
-        
-        kassarij.sluitAchteraan(persoon);
     }
 
     /**
