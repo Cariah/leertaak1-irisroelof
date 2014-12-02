@@ -102,11 +102,14 @@ public class KantineSimulatie {
      * @param dagen
      */
     public void simuleer(int dagen) {
+        // totaal aantal personen gepasseerd
+        int totaalAantalPersonen = 0;
+        
         // for lus voor dagen
         for(int i=0; i < dagen;i++) {
             // bedenk hoeveel personen vandaag binnen lopen
+            
             int aantalpersonen = 5;
-
             // laat de personen maar komen...
             for(int j=0;j<aantalpersonen;j++) {
                 // maak persoon en dienblad aan, koppel ze
@@ -131,12 +134,14 @@ public class KantineSimulatie {
             }
             kantine.verwerkRijVoorKassa();
             
+            totaalAantalPersonen += aantalpersonen;
             Kassa kassa = kantine.getKassa();
             
             // Druk de dagtotalen af
+            System.out.println("Hoeveelheid personen vandaag gepasseerd: " + aantalpersonen);
             System.out.println("Hoeveelheid geld in Kassa: " + kassa.hoeveelheidGeldInKassa());
             System.out.println("Hoeveelheid artikelen gepasseerd: " + kassa.aantalArtikelen());
-            
+            System.out.println();
             // Reset de waardes van de Kassa.
             kassa.resetKassa();
             // verwerk rij voor de kassa
@@ -144,5 +149,7 @@ public class KantineSimulatie {
             // zijn gekomen
             // reset de kassa voor de volgende dag
         }
+        System.out.println("Hoeveelheid personen gepasseerd: " + totaalAantalPersonen);
+        System.out.println();
     }
 }
