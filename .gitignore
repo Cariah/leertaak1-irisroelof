@@ -1,3 +1,5 @@
 *.class
 *.ctxt
 *.bluej
+opgave01/*.bluej
+doc/*
