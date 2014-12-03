@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @version 01/12/2014
  */
 public class KantineAanbod {
-    
+
     // interne opslag voorraad
     private HashMap<String, ArrayList<Artikel>> aanbod;
 
@@ -63,5 +63,14 @@ public class KantineAanbod {
      */
     public Artikel getArtikel(String naam) {
         return getArtikel(getArrayList(naam));
+    }
+
+    /**
+     * Publieke methode om de artikel voorraad te checken via de naam
+     * @param String naam Naam van het artikel
+     * @return int Artikel voorraad van gegeven artikel
+     */
+    public int getArtikelVoorraad(String naam){
+    	return getArrayList(naam).size();
     }
 }
