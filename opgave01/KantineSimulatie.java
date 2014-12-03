@@ -163,8 +163,4 @@ public class KantineSimulatie {
         System.out.println();
     }
 
-    public void checkArtikelVoorraad()
-    {
-
-    }
 }
