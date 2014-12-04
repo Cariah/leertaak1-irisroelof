@@ -39,7 +39,7 @@ public class KantineAanbod {
      * naam van het artikel. Retourneert null als artikel niet bestaat.
      */
     private ArrayList<Artikel> getArrayList(String productnaam) {
-         return aanbod.get(productnaam);
+        return aanbod.get(productnaam);
     }
 
     /**
@@ -71,6 +71,39 @@ public class KantineAanbod {
      * @return int Artikel voorraad van gegeven artikel
      */
     public int getArtikelVoorraad(String naam){
-    	return getArrayList(naam).size();
+        return getArrayList(naam).size();
+    }
+
+    /**
+     * Publieke methode om de artikelvoorraad 
+     * van een bestaand Artikel aan te passen.
+     * @param String naam Naam van het artikel
+     * @param int hoeveelheid Hoeveelheid artikelen dat je wilt toevoegen
+     */
+    public void setArtikelVoorraad(String naam, int hoeveelheid){
+        ArrayList<Artikel> artikelen = getArrayList(naam);
+        for(int i = 0; i < hoeveelheid; i++){
+            artikelen.add(getArtikel(naam));
+        }
+        if(artikelen.size() > 0){
+            aanbod.put(naam, artikelen);
+        }
+    }
+
+    /**
+     * Publieke methode om de artikelvoorraad
+     * van een artikel aan te passen.
+     * @param Artikel artikel Een artikel.
+     * @param hoeveelheid Hoeveelheid 
+     */
+    public void setArtikelVoorraad(Artikel artikel, int hoeveelheid){
+        ArrayList<Artikel> artikelen = new ArrayList<Artikel>();
+        String artikelNaam = artikel.getNaam();
+        for(int i = 0; i < hoeveelheid; i++){
+            artikelen.add(artikel);
+        }
+        if(artikelen.size() > 0){
+            aanbod.put(artikelNaam, artikelen);
+        }
     }
 }

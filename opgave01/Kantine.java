@@ -12,7 +12,7 @@ public class Kantine
     private Kassa kassa;
     private KassaRij kassarij;
     private KantineAanbod kantineaanbod;
-    
+
     /**
      * Constructor
      */
@@ -29,7 +29,7 @@ public class Kantine
      * sluit deze persoon achteraan in de rij.
      */
     public void loopPakSluitAan(Persoon persoon, String[] artikelnamen) {
-        
+
         Dienblad dienblad = persoon.getDienblad();
         if(dienblad != null){
             for(int i = 0;i < artikelnamen.length; i++){
@@ -60,7 +60,7 @@ public class Kantine
             kassa.rekenAf(kassarij.eerstePersoonInRij());
         }
     }
-    
+
     /**
      * Retourneerd de private instantie van kassa
      * @return Kassa de Kassa die wordt gebruikt in de Kantine
@@ -69,7 +69,7 @@ public class Kantine
     {
         return this.kassa;
     }
-    
+
     /**
      * Retourneerd de private instantie van kantineaanbod
      * @return het kantineaanbod
@@ -78,7 +78,7 @@ public class Kantine
     {
         return kantineaanbod;
     }
-    
+
     /**
      * Wijzigd het kantineaanbod
      * @param Er wordt een kantineaanbod verwacht

@@ -99,6 +99,15 @@ public class KantineSimulatie {
         return artikelen;
     }
 
+    private double[] geefArtikelPrijzen(int[] indexen) {
+        double[] prijzen = new double[indexen.length];
+        for(int i = 0; i< indexen.length; i++)
+        {
+            prijzen[i] = artikelprijzen[indexen[i]];
+        }
+        return prijzen;
+    }
+
     /**
      * Deze methode simuleert een aantal dagen in het
      * verloop van de kantine
@@ -121,23 +130,32 @@ public class KantineSimulatie {
                 persoon.pakDienblad(dienblad);
 
                 // bedenk hoeveel artikelen worden gepakt
-                int aantalartikelen = getRandomValue(MIN_ARTIKELEN_PER_PERSOON, MAX_ARTIKELEN_PER_PERSOON);
+                int gepakteartikelen = getRandomValue(MIN_ARTIKELEN_PER_PERSOON, MAX_ARTIKELEN_PER_PERSOON);
 
                 // genereer de “artikelnummers”, dit zijn indexen
                 // van de artikelnamen array
-                int[] tepakken = getRandomArray(aantalartikelen, 0, AANTAL_ARTIKELEN-1);
+                int[] tepakken = getRandomArray(gepakteartikelen, 0, AANTAL_ARTIKELEN-1);
 
                 // vind de artikelnamen op basis van
                 // de indexen hierboven
                 String[] artikelen = geefArtikelNamen(tepakken);
+                double[] artikelPrijzen = geefArtikelPrijzen(tepakken);
 
                 // Check artikelvoorraad
-                //checkArtikelVoorraad();
                 for(int a = 0; a < artikelen.length; a++){
-                    System.out.println(kantineaanbod.getArtikelVoorraad(artikelen[a]));
+                    int artikelvoorraad = kantineaanbod.getArtikelVoorraad(artikelen[a]);
+                    //System.out.println(artikelvoorraad);
+                    if(artikelvoorraad <= BESTEL_NIVEAU){
+                        // Voorraad aanpassen
+                        int voorraad = getRandomValue(MIN_ARTIKELEN_PER_SOORT, MAX_ARTIKELEN_PER_SOORT);
+
+                        kantineaanbod.setArtikelVoorraad(
+                            new Artikel(artikelen[a], artikelPrijzen[a]), voorraad);
+                        System.out.println("############################");
+                        System.out.println("## ARTIKEL VOORRAAD AANGEPAST ##");
+                    }
                 }
 
-                
                 // loop de kantine binnen, pak de gewenste
                 // artikelen, sluit aan
                 kantine.loopPakSluitAan(persoon, artikelen);
