@@ -1,5 +1,6 @@
 *.class
 *.ctxt
 *.bluej
-opgave01/*.bluej
 opgave01/doc/*
+*.bluej
+opgave01/package.bluej
