@@ -151,8 +151,6 @@ public class KantineSimulatie {
 
                         kantineaanbod.setArtikelVoorraad(
                             new Artikel(artikelen[a], artikelPrijzen[a]), voorraad);
-                        System.out.println("############################");
-                        System.out.println("## ARTIKEL VOORRAAD AANGEPAST ##");
                     }
                 }
 

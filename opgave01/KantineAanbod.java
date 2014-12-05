@@ -84,7 +84,7 @@ public class KantineAanbod {
         ArrayList<Artikel> artikelen = new ArrayList<Artikel>();
         String artikelNaam = artikel.getNaam();
         for(int i = 0; i < hoeveelheid; i++){
-            artikelen.add(artikel);
+            artikelen.add(new Artikel(artikel.getNaam(), artikel.getPrijs()));
         }
         if(artikelen.size() > 0){
             aanbod.put(artikelNaam, artikelen);
