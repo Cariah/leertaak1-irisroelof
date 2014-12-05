@@ -1,33 +1,32 @@
-
-/**
- * Write a description of class Administratie here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Administratie
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Administratie
-     */
-    public Administratie()
+    private Administratie()
     {
-        // initialise instance variables
-        x = 0;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Methode om dagomzet uit te rekenen
+     * @param omzet
+     * @return array (7 elementen) met dagomzetten
      */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public static double[] berekenDagOmzet(double[] omzet) {
+        double[] temp = new double[7];
+        for(int i = 0; i < 7; i++) {
+            int j = 0;
+            while(omzet.length > (i+7*j)) {
+                temp[i]+=omzet[i+7*j];
+                j++;
+            }
+        }
+        return temp;
     }
+    
+    public static void test(){
+        double[] test = {50.25, 20.25, 70.25, 50.25, 20.25, 70.25, 10, 50.25, 20.25, 70.25, 50.25, 20.25, 70.25, 10};
+        for(Double d : berekenDagOmzet(test))
+        {
+            System.out.println(d);   
+        }
+    }
+
 }
