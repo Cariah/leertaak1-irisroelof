@@ -87,7 +87,7 @@ public class KantineSimulatie {
 
     /**
      * Methode om op basis van een array van indexen voor de array
-     * artikelnamen de bijhorende array van artikelnamen te maken
+     * artikelnamen de bijbehorende array van artikelnamen te maken
      * @param indexen
      * @return De array met artikelnamen
      */
@@ -99,6 +99,12 @@ public class KantineSimulatie {
         return artikelen;
     }
 
+    /**
+     * Methode om op basis van een array van indexen voor de array van artikelprijzen
+     * de bijbehorende array van artikelprijzen te maken
+     * @param indexen
+     * @return de array met artikelprijzen
+     */
     private double[] geefArtikelPrijzen(int[] indexen) {
         double[] prijzen = new double[indexen.length];
         for(int i = 0; i< indexen.length; i++)
@@ -144,15 +150,13 @@ public class KantineSimulatie {
                 // Check artikelvoorraad
                 for(int a = 0; a < artikelen.length; a++){
                     int artikelvoorraad = kantineaanbod.getArtikelVoorraad(artikelen[a]);
-                    //System.out.println(artikelvoorraad);
+                    
                     if(artikelvoorraad <= BESTEL_NIVEAU){
                         // Voorraad aanpassen
                         int voorraad = getRandomValue(MIN_ARTIKELEN_PER_SOORT, MAX_ARTIKELEN_PER_SOORT);
 
                         kantineaanbod.setArtikelVoorraad(
                             new Artikel(artikelen[a], artikelPrijzen[a]), voorraad);
-                        System.out.println("############################");
-                        System.out.println("## ARTIKEL VOORRAAD AANGEPAST ##");
                     }
                 }
 
