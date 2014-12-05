@@ -1,33 +1,46 @@
-
 /**
- * Write a description of class Administratie here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Administratie Class
+ * @author Iris Meijer
+ * @author Roelof Kallenkoot
+ * @version 05/12/2014
  */
-public class Administratie
-{
-    // instance variables - replace the example below with your own
-    private int x;
-
+public class Administratie {
+    
     /**
-     * Constructor for objects of class Administratie
+     * Private Constructor for Administratie
      */
-    public Administratie()
+    private Administratie()
     {
-        // initialise instance variables
-        x = 0;
+        // Private constructor, 
+        // zo kunnen we dit object niet meer instantiëren
     }
-
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Deze methode berekent van de int array aantal de
+     * gemiddelde waarde
+     * @param aantal
+     * @return het gemiddelde
      */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public static double berekenGemiddeldAantal(int[] aantal) {
+        int lengtearray = aantal.length;
+        double som=0;
+        for(int i=0;i<lengtearray;i++){
+            som += aantal[i];
+        }
+        return som/lengtearray;
+    }
+    
+    /**
+     * Deze methode berekent van de double array omzet de
+     * gemiddelde waarde
+     * @param omzet
+     * @return Het gemiddelde
+     */
+    public static double berekenGemiddeldeOmzet(double[] omzet) {
+        int lengtearray = omzet.length;
+        double som = 0;
+        for(int i = 0;i<lengtearray; i++){
+            som += omzet[i];
+        }
+        return som/lengtearray;
     }
 }
