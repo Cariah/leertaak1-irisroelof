@@ -25,12 +25,17 @@ public class Dienblad {
 
     /**
      * Methode om artikel aan dienblad toe te voegen
-     * @param artikel
+     * @param artikel 
      */
     public void voegToe(Artikel artikel) {
         artikelen.add(artikel);
     }
 
+    /**
+     * Getter voor artikelen Iterator
+     * @return Iterator<Artikel> met alle artikelen 
+     * die op het dienblad zijn geplaatst
+     */
     public Iterator<Artikel> getArtikelen()
     {
         return artikelen.iterator();

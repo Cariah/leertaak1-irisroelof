@@ -124,7 +124,7 @@ public class Persoon
     /**
      * Retourneerd de private instantie van Dienblad die
      * wordt gebruikt door de Persoon
-     * @return Dienblad
+     * @return Dienblad van de Persoon
      */
     public Dienblad getDienblad()
     {

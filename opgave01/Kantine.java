@@ -63,7 +63,7 @@ public class Kantine
 
     /**
      * Retourneerd de private instantie van kassa
-     * @return Kassa de Kassa die wordt gebruikt in de Kantine
+     * @return De Kassa die wordt gebruikt in de Kantine
      */
     public Kassa getKassa()
     {
