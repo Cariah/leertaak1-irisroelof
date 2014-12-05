@@ -1,3 +1,4 @@
+
 /**
  * Administratie Class
  * @author Iris Meijer
@@ -5,15 +6,16 @@
  * @version 05/12/2014
  */
 public class Administratie {
-    
+
     /**
      * Private Constructor for Administratie
      */
     private Administratie()
     {
-        // Private constructor, 
+        // Private constructor,
         // zo kunnen we dit object niet meer instantiëren
     }
+
     /**
      * Deze methode berekent van de int array aantal de
      * gemiddelde waarde
@@ -28,7 +30,7 @@ public class Administratie {
         }
         return som/lengtearray;
     }
-    
+
     /**
      * Deze methode berekent van de double array omzet de
      * gemiddelde waarde
@@ -43,4 +45,22 @@ public class Administratie {
         }
         return som/lengtearray;
     }
+
+    /**
+     * Methode om dagomzet uit te rekenen
+     * @param omzet
+     * @return array (7 elementen) met dagomzetten
+     */
+    public static double[] berekenDagOmzet(double[] omzet) {
+        double[] temp = new double[7];
+        for(int i = 0; i < 7; i++) {
+            int j = 0;
+            while(omzet.length > (i+7*j)) {
+                temp[i]+=omzet[i+7*j];
+                j++;
+            }
+        }
+        return temp;
+    }
+
 }
