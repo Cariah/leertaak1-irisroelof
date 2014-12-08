@@ -3,7 +3,8 @@
  *  class KantineMedewerker
  * 
  * @author Roelof Kallenkoot
- * @version (a version number or a date)
+ * @author Iris Meijer
+ * @version 08/12/2014
  */
 public class KantineMedewerker extends Persoon
 {
@@ -16,9 +17,10 @@ public class KantineMedewerker extends Persoon
      * @param medewerkersnummer
      * @param magAchterKassa
      */
-    public KantineMedewerker(String medewerkersnummer, boolean magAchterKassa)
+    public KantineMedewerker(String medewerkersnummer, boolean magAchterKassa,String bsn, String voornaam, String achternaam, char geslacht,
+    int dag, int maand, int jaar)
     {
-        // initialise instance variables
+        super(bsn,voornaam,achternaam,geslacht,dag,maand,jaar);
         this.medewerkersnummer = medewerkersnummer;
         this.magAchterKassa = magAchterKassa;
     }
