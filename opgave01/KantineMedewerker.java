@@ -17,7 +17,7 @@ public class KantineMedewerker extends Persoon
      * @param magAchterKassa
      */
     public KantineMedewerker(String medewerkersnummer, boolean magAchterKassa)
-    {s
+    {
         // initialise instance variables
         this.medewerkersnummer = medewerkersnummer;
         this.magAchterKassa = magAchterKassa;
