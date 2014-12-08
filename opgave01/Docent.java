@@ -14,6 +14,15 @@ public class Docent extends Persoon
 
     /**
      * Constructor for objects of class Docent
+     * @param afkorting - de afkorting van de docent
+     * @param afdeling - de afdeling van de docent
+     * @param bsn - het bsn-nummer van de docent
+     * @param voornaam - de voornaam van de docent
+     * @param achternaam - de achternaam van de docent
+     * @param geslacht - het geslach van de docent
+     * @param dag - de geboortedag van de docent
+     * @param maand - de geboortemaand van de docent
+     * @param jaar - het geboortejaar van de docent
      */
     public Docent(String afkorting, String afdeling, String bsn, String voornaam, String achternaam, char geslacht,
     int dag, int maand, int jaar)
