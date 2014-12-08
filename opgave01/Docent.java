@@ -43,7 +43,7 @@ public class Docent extends Persoon
 
     /**
      * Retourneerd de afdeling van de docent
-     * @return de afkorting van de docent
+     * @return de afdeling van de docent
      */
     public String getAfdeling()
     {
@@ -52,7 +52,7 @@ public class Docent extends Persoon
 
     /**
      * Wijzigt de afkorting van de docent
-     * @param afkorting -  de nieuwe afkorting van de docent
+     * @param afkorting - de nieuwe afkorting van de docent
      */
     public void setAfkorting(String afkorting)
     {
@@ -61,7 +61,7 @@ public class Docent extends Persoon
 
     /**
      * Wijzigt de afdeling van de docent
-     * @param afdeling -  de nieuwe afdeling van de docen
+     * @param afdeling - de nieuwe afdeling van de docen
      */
     public void setAfdeling(String afdeling)
     {
