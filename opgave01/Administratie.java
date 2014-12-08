@@ -5,7 +5,10 @@
  * @author Roelof Kallenkoot
  * @version 05/12/2014
  */
-public class Administratie {
+public class Administratie
+{
+
+    private static final int DAYS_IN_WEEK = 7;
 
     /**
      * Private Constructor for Administratie
@@ -52,11 +55,11 @@ public class Administratie {
      * @return array (7 elementen) met dagomzetten
      */
     public static double[] berekenDagOmzet(double[] omzet) {
-        double[] temp = new double[7];
-        for(int i = 0; i < 7; i++) {
+        double[] temp = new double[DAYS_IN_WEEK];
+        for(int i = 0; i < DAYS_IN_WEEK; i++) {
             int j = 0;
-            while(omzet.length > (i+7*j)) {
-                temp[i]+=omzet[i+7*j];
+            while(omzet.length > (i+DAYS_IN_WEEK*j)) {
+                temp[i]+=omzet[i+DAYS_IN_WEEK*j];
                 j++;
             }
         }
