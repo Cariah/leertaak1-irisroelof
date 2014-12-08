@@ -1,9 +1,10 @@
 
 /**
- * Write a description of class Docent here.
+ * class Docent
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Iris Meijer
+ * @author Roelof Kallenkoot
+ * @version 8-12-2014
  */
 public class Docent extends Persoon
 {
@@ -22,21 +23,37 @@ public class Docent extends Persoon
         this.afdeling = afdeling;
     }
 
+    /**
+     * Retourneerd de afkorting van de docent
+     * @return de afkorting van de docent
+     */
     public String getAfkorting()
     {
         return afkorting; 
     }
 
+    /**
+     * Retourneerd de afdeling van de docent
+     * @return de afkorting van de docent
+     */
     public String getAfdeling()
     {
         return afdeling;
     }
 
+    /**
+     * Wijzigt de afkorting van de docent
+     * @param afkorting -  de nieuwe afkorting van de docent
+     */
     public void setAfkorting(String afkorting)
     {
         this.afkorting = afkorting;
     }
 
+    /**
+     * Wijzigt de afdeling van de docent
+     * @param afdeling -  de nieuwe afdeling van de docen
+     */
     public void setAfdeling(String afdeling)
     {
         this.afdeling = afdeling;
