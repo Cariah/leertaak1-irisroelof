@@ -136,7 +136,6 @@ public class Persoon
      */
     public void drukAf()
     {
-        System.out.println("#####");
         System.out.println("# BSN:\t\t\t" + getBsn());
         System.out.println("# Voornaam:\t\t" + getVoornaam());
         System.out.println("# Achternaam:\t\t" + getAchternaam());

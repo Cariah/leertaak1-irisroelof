@@ -19,4 +19,4 @@ Het probleem is dat het nu geen Constant meer is.Dit kunnen we oplossen door er
 weer `final` in te zetten.
 
 ### Opgave 2b
-??Dit moet van de compiler, geen idee waarom
+Dit zorgt ervoor dat in iedergeval de parent class goed is geinstantieerd.

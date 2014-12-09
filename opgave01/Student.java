@@ -74,13 +74,8 @@ public class Student extends Persoon
     public void drukAf()
     {
         System.out.println("#####");
-        System.out.println("# BSN:\t\t\t" + getBsn());
-        System.out.println("# Voornaam:\t\t" + getVoornaam());
-        System.out.println("# Achternaam:\t\t" + getAchternaam());
-        System.out.println("# Geslacht:\t\t" + getGeslacht());
-        System.out.println("# Geboortedatum:\t" + getGeboortedatum());
         System.out.println("# Studentnummer:\t" + getStudentnummer());
         System.out.println("# Studierichting:\t" + getStudierichting());
-        System.out.println("#####");
+        super.drukAf();
     }
 }
