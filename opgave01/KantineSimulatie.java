@@ -195,6 +195,7 @@ public class KantineSimulatie {
 
             
             aantalArtikelen[i] += kassa.aantalArtikelen();
+            hoeveelheidInKassa[i] += kassa.hoeveelheidGeldInKassa();
             
             
             // Druk de dagtotalen af
@@ -209,6 +210,14 @@ public class KantineSimulatie {
             // zijn gekomen
             // reset de kassa voor de volgende dag
             System.out.println("Gemiddeld aantal artikelen: " + Administratie.berekenGemiddeldAantal(aantalArtikelen));
+            System.out.println("Gemiddelde omzet: " + Administratie.berekenGemiddeldeOmzet(hoeveelheidInKassa)); 
+            
+             double[] dagomzet = Administratie.berekenDagOmzet(hoeveelheidInKassa);
+             for ( int x=0; x<dagomzet.length; x++)
+             {
+                 System.out.println("Dagomzet: " + dagomzet[x]);
+             }
+             
         }
         
         System.out.println("Hoeveelheid personen gepasseerd: " + totaalAantalPersonen);
