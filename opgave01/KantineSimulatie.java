@@ -37,10 +37,11 @@ public class KantineSimulatie {
     private static final int MIN_ARTIKELEN_PER_SOORT = 10000;
     private static final int MAX_ARTIKELEN_PER_SOORT = 20000;
 
-    // minimum en maximum aantal personen per dag
-    private static final int MIN_PERSONEN_PER_DAG = 50;
+    // maximum aantal personen per dag
+    private static final int MIN_PERSONEN_PER_DAG = 1;
     private static final int MAX_PERSONEN_PER_DAG = 100;
-
+    
+    
     // minimum en maximum artikelen per persoon
     private static final int MIN_ARTIKELEN_PER_PERSOON = 1;
     private static final int MAX_ARTIKELEN_PER_PERSOON = 4;
@@ -122,16 +123,37 @@ public class KantineSimulatie {
     public void simuleer(int dagen) {
         // totaal aantal personen gepasseerd
         int totaalAantalPersonen = 0;
-
+        
+        int[] aantalArtikelen = new int[dagen];
+        double[] hoeveelheidInKassa = new double[dagen];
+        
         // for lus voor dagen
         for(int i=0; i < dagen;i++) {
             // bedenk hoeveel personen vandaag binnen lopen
-
-            int aantalpersonen = getRandomValue(MIN_PERSONEN_PER_DAG, MAX_PERSONEN_PER_DAG);
+            
+            int aantalpersonen = MAX_PERSONEN_PER_DAG;
+            
             // laat de personen maar komen...
-            for(int j=0;j < aantalpersonen;j++) {
+            for(int j=0;j < aantalpersonen ;j++) {
+                Persoon persoon;
+                
+                int random = getRandomValue(MIN_PERSONEN_PER_DAG, MAX_PERSONEN_PER_DAG);
+                
+                if(random <= MAX_PERSONEN_PER_DAG * 0.89){
+                    persoon = new Student();
+                } 
+                else if(random > MAX_PERSONEN_PER_DAG * 0.89 && random <= MAX_PERSONEN_PER_DAG * 0.99){
+                    persoon = new Docent();
+                }
+                else if(random > MAX_PERSONEN_PER_DAG * 0.99) {
+                    persoon = new KantineMedewerker();
+                } 
+                else {
+                    persoon = new Persoon();
+                }
+                
+                
                 // maak persoon en dienblad aan, koppel ze
-                Persoon persoon = new Persoon();
                 Dienblad dienblad = new Dienblad();
                 persoon.pakDienblad(dienblad);
 
@@ -147,28 +169,34 @@ public class KantineSimulatie {
                 String[] artikelen = geefArtikelNamen(tepakken);
                 double[] artikelPrijzen = geefArtikelPrijzen(tepakken);
 
-                // Check artikelvoorraad
-                for(int a = 0; a < artikelen.length; a++){
-                    int artikelvoorraad = kantineaanbod.getArtikelVoorraad(artikelen[a]);
-                    
-                    if(artikelvoorraad <= BESTEL_NIVEAU){
-                        // Voorraad aanpassen
-                        int voorraad = getRandomValue(MIN_ARTIKELEN_PER_SOORT, MAX_ARTIKELEN_PER_SOORT);
-
-                        kantineaanbod.setArtikelVoorraad(
-                            new Artikel(artikelen[a], artikelPrijzen[a]), voorraad);
-                    }
-                }
-
                 // loop de kantine binnen, pak de gewenste
                 // artikelen, sluit aan
                 kantine.loopPakSluitAan(persoon, artikelen);
+                persoon.drukAf();
             }
+
+            // Check artikelvoorraad
+            for(int a = 0; a < artikelnamen.length; a++){
+                int artikelvoorraad = kantineaanbod.getArtikelVoorraad(artikelnamen[a]);
+
+                if(artikelvoorraad <= BESTEL_NIVEAU){
+                    // Voorraad aanpassen
+                    int voorraad = getRandomValue(MIN_ARTIKELEN_PER_SOORT, MAX_ARTIKELEN_PER_SOORT);
+
+                    kantineaanbod.setArtikelVoorraad(
+                        new Artikel(artikelnamen[a], artikelprijzen[a]), voorraad);
+                }
+            }
+
             kantine.verwerkRijVoorKassa();
 
             totaalAantalPersonen += aantalpersonen;
             Kassa kassa = kantine.getKassa();
 
+            
+            aantalArtikelen[i] += kassa.aantalArtikelen();
+            
+            
             // Druk de dagtotalen af
             System.out.println("Hoeveelheid personen vandaag gepasseerd: " + aantalpersonen);
             System.out.println("Hoeveelheid geld in Kassa: " + kassa.hoeveelheidGeldInKassa());
@@ -180,7 +208,9 @@ public class KantineSimulatie {
             // druk de dagtotalen af en hoeveel personen binnen
             // zijn gekomen
             // reset de kassa voor de volgende dag
+            System.out.println("Gemiddeld aantal artikelen: " + Administratie.berekenGemiddeldAantal(aantalArtikelen));
         }
+        
         System.out.println("Hoeveelheid personen gepasseerd: " + totaalAantalPersonen);
         System.out.println();
     }
