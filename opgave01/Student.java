@@ -86,6 +86,6 @@ public class Student extends Persoon
         System.out.println("#####");
         System.out.println("# Studentnummer:\t" + getStudentnummer());
         System.out.println("# Studierichting:\t" + getStudierichting());
-        super.drukAf();
+        System.out.println("#####");
     }
 }

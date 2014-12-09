@@ -86,7 +86,7 @@ public class Docent extends Persoon
         System.out.println("#####");
         System.out.println("Afkorting: " + getAfkorting());
         System.out.println("Afdeling: " + getAfdeling());
-        super.drukAf();
+        System.out.println("#####");
     }
 }
 
