@@ -12,6 +12,13 @@ public class KantineMedewerker extends Persoon
     private String medewerkersnummer;
     private boolean magAchterKassa;
 
+    public KantineMedewerker()
+    {
+        super();
+        setMedewerkersnummer("Onbekend");
+        setMagAchterKassa(false);
+    }
+    
     /**
      * Constructor for objects of class KantineMedewerker
      * @param medewerkersnummer
@@ -21,8 +28,8 @@ public class KantineMedewerker extends Persoon
     int dag, int maand, int jaar)
     {
         super(bsn,voornaam,achternaam,geslacht,dag,maand,jaar);
-        this.medewerkersnummer = medewerkersnummer;
-        this.magAchterKassa = magAchterKassa;
+        setMedewerkersnummer(medewerkersnummer);
+        setMagAchterKassa(magAchterKassa);
     }
 
     /**

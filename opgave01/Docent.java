@@ -13,6 +13,16 @@ public class Docent extends Persoon
     private String afdeling;
 
     /**
+     * Constructor for objects for class Docent
+     */
+    public Docent()
+    {
+        super();
+        setAfkorting("Onbekend");
+        setAfdeling("Onbekend");
+    }
+    
+    /**
      * Constructor for objects of class Docent
      * @param afkorting - de afkorting van de docent
      * @param afdeling - de afdeling van de docent
@@ -28,8 +38,8 @@ public class Docent extends Persoon
     int dag, int maand, int jaar)
     {
         super(bsn,voornaam,achternaam,geslacht,dag,maand,jaar);
-        this.afkorting = afkorting;
-        this.afdeling = afdeling;
+        setAfkorting(afkorting);
+        setAfdeling(afdeling);
     }
 
     /**

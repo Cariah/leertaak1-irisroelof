@@ -14,6 +14,16 @@ public class Student extends Persoon
 
     /**
      * Constructor for objects of class Student
+     */
+    public Student()
+    {
+        super();
+        setStudentnummer("Onbekend");
+        setStudierichting("Onbekend");
+    }
+    
+    /**
+     * Constructor for objects of class Student
      * @param studentnummer Studentnummer
      * @param studierichting Studierichting
      * @param bsn Burgerservicenummer
@@ -28,8 +38,8 @@ public class Student extends Persoon
     String achternaam, char geslacht, int dag, int maand, int jaar)
     {
         super(bsn,voornaam,achternaam,geslacht,dag,maand,jaar);
-        this.studentnummer = studentnummer;
-        this.studierichting = studierichting;
+        setStudentnummer(studentnummer);
+        setStudierichting(studierichting);
     }
 
     /**
