@@ -67,4 +67,16 @@ public class KantineMedewerker extends Persoon
     {
         this.magAchterKassa = magAchterKassa;
     }
+    
+    
+    /**
+     * Drukt alle informatie van de kantinemedewerker af
+     */
+    public void drukAf()
+    {
+        System.out.println("#####");
+        System.out.println("Medewerkersnummer: " + getMedewerkersnummer());
+        System.out.println("Deze persoon mag achter kassa? : " + getMagAchterKassa());
+        super.drukAf();
+    }
 }
