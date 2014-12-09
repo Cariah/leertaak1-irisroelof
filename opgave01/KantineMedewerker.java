@@ -75,8 +75,8 @@ public class KantineMedewerker extends Persoon
     public void drukAf()
     {
         System.out.println("#####");
-        System.out.println("Medewerkersnummer: " + getMedewerkersnummer());
-        System.out.println("Deze persoon mag achter kassa? : " + getMagAchterKassa());
+        System.out.println("# Medewerkersnummer: " + getMedewerkersnummer());
+        System.out.println("# Deze persoon mag achter kassa? : " + getMagAchterKassa());
         System.out.println("#####");
     }
 }
