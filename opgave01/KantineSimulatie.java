@@ -6,7 +6,7 @@ import java.util.Random;
  *
  * @author Iris Meijer
  * @author Roelof Kallenkoot
- * @version 27/11/2014
+ * @version 09/12/2014
  */
 
 public class KantineSimulatie {
@@ -136,17 +136,18 @@ public class KantineSimulatie {
             for(int j=0;j < aantalpersonen ;j++) {
                 Persoon persoon;
 
+                // Opgave 4
                 int random = getRandomValue(MIN_PERSONEN_PER_DAG, MAX_PERSONEN_PER_DAG);
 
                 if(random <= MAX_PERSONEN_PER_DAG * 0.89){
                     persoon = new Student();
-                } 
+                }
                 else if(random > MAX_PERSONEN_PER_DAG * 0.89 && random <= MAX_PERSONEN_PER_DAG * 0.99){
                     persoon = new Docent();
                 }
                 else if(random > MAX_PERSONEN_PER_DAG * 0.99) {
                     persoon = new KantineMedewerker();
-                } 
+                }
                 else {
                     persoon = new Persoon();
                 }
@@ -170,10 +171,12 @@ public class KantineSimulatie {
                 // loop de kantine binnen, pak de gewenste
                 // artikelen, sluit aan
                 kantine.loopPakSluitAan(persoon, artikelen);
+
+                // Opgave 3e
                 persoon.drukAf();
             }
 
-            // Check artikelvoorraad
+            // Check artikelvoorraad aan het eind van de dag
             for(int a = 0; a < artikelnamen.length; a++){
                 int artikelvoorraad = kantineaanbod.getArtikelVoorraad(artikelnamen[a]);
 
@@ -186,6 +189,7 @@ public class KantineSimulatie {
                 }
             }
 
+            // verwerk rij voor de kassa
             kantine.verwerkRijVoorKassa();
 
             totaalAantalPersonen += aantalpersonen;
@@ -199,20 +203,19 @@ public class KantineSimulatie {
             System.out.println("Hoeveelheid geld in Kassa: " + kassa.hoeveelheidGeldInKassa());
             System.out.println("Hoeveelheid artikelen gepasseerd: " + kassa.aantalArtikelen());
             System.out.println();
-            // Reset de waardes van de Kassa.
-            kassa.resetKassa();
-            // verwerk rij voor de kassa
-            // druk de dagtotalen af en hoeveel personen binnen
-            // zijn gekomen
-            // reset de kassa voor de volgende dag
+
+            // Opgave 3f
             System.out.println("Gemiddeld aantal artikelen: " + Administratie.berekenGemiddeldAantal(aantalArtikelen));
-            System.out.println("Gemiddelde omzet: " + Administratie.berekenGemiddeldeOmzet(hoeveelheidInKassa)); 
+            System.out.println("Gemiddelde omzet: " + Administratie.berekenGemiddeldeOmzet(hoeveelheidInKassa));
 
             double[] dagomzet = Administratie.berekenDagOmzet(hoeveelheidInKassa);
             for ( int x=0; x<dagomzet.length; x++)
             {
                 System.out.println("Dagomzet: " + dagomzet[x]);
             }
+
+            // Reset de waardes van de Kassa.
+            kassa.resetKassa();
 
         }
 

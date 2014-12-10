@@ -1,7 +1,7 @@
 
 /**
  *  class KantineMedewerker
- * 
+ *
  * @author Roelof Kallenkoot
  * @author Iris Meijer
  * @version 08/12/2014
@@ -18,7 +18,7 @@ public class KantineMedewerker extends Persoon
         setMedewerkersnummer("Onbekend");
         setMagAchterKassa(false);
     }
-    
+
     /**
      * Constructor for objects of class KantineMedewerker
      * @param medewerkersnummer
@@ -40,7 +40,7 @@ public class KantineMedewerker extends Persoon
     {
         return medewerkersnummer;
     }
-    
+
     /**
      * Retourneerd of de Kantinemedewerker achter de kassa mag of niet
      * @return magAchterKassa
@@ -49,26 +49,26 @@ public class KantineMedewerker extends Persoon
     {
         return magAchterKassa;
     }
-    
+
     /**
      * Setter voor het medewerkernummer
-     * @param Medewerkersnummer
+     * @param String Medewerkersnummer
      */
     public void setMedewerkersnummer(String medewerkersnummer)
     {
         this.medewerkersnummer = medewerkersnummer;
     }
-    
+
     /**
      * Setter voor magAchterKassa
-     * @param MagAchterKassa
+     * @param boolean MagAchterKassa
      */
     public void setMagAchterKassa(boolean magAchterKassa)
     {
         this.magAchterKassa = magAchterKassa;
     }
-    
-    
+
+
     /**
      * Drukt alle informatie van de kantinemedewerker af
      */
