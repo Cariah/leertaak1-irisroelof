@@ -1,7 +1,7 @@
 
 /**
  * Met deze klasse kunnen personen aangemaakt worden
- * 
+ *
  * @author Roelof Kallenkoot
  * @author Iris Meijer
  * @version 19/11/2014
@@ -42,7 +42,7 @@ public class Persoon
      * @param jaar  Jaar van de geboortedatum
      */
     public Persoon(String bsn, String voornaam, String achternaam, char geslacht,
-    int dag, int maand, int jaar)
+        int dag, int maand, int jaar)
     {
         setBsn(bsn);
         setVoornaam(voornaam);
@@ -120,7 +120,7 @@ public class Persoon
         }
         return temp;
     }
-    
+
     /**
      * Retourneerd de private instantie van Dienblad die
      * wordt gebruikt door de Persoon
@@ -129,6 +129,29 @@ public class Persoon
     public Dienblad getDienblad()
     {
         return this.dienblad;
+    }
+
+    /**
+     * Retourneerd de Persoon als String
+     * @return String Persoon als String
+     */
+    @Override
+    public String toString()
+    {
+        StringBuilder result = new StringBuilder();
+        String newline = System.getProperty("line.separator");
+        result.append("bsn: ");
+        result.append(getBsn()).append(newline);
+        result.append("voornaam: ");
+        result.append(getVoornaam()).append(newline);
+        result.append("achternaam: ");
+        result.append(getAchternaam()).append(newline);
+        result.append("geslacht: ");
+        result.append(getGeslacht()).append(newline);
+        result.append("geboortedatum: ");
+        result.append(getGeboortedatum()).append(newline);
+
+        return result.toString();
     }
 
     /**

@@ -79,4 +79,21 @@ public class KantineMedewerker extends Persoon
         System.out.println("# Deze persoon mag achter kassa? : " + getMagAchterKassa());
         System.out.println("#####");
     }
+    
+    /**
+     * Retourneerd de KantineMedewerker als String
+     * @return KantineMedewerker als String
+     */
+    @Override
+    public String toString()
+    {
+        StringBuilder result = new StringBuilder();
+        String newline = System.getProperty("line.separator");
+        
+        result.append("medewerkersnummer: ");
+        result.append(getMedewerkersnummer()).append(newline);
+        result.append("mag achter kassa: ");
+        result.append(getMagAchterKassa()).append(newline);
+        return result.toString();
+    }
 }

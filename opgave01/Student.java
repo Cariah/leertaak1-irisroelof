@@ -21,7 +21,7 @@ public class Student extends Persoon
         setStudentnummer("Onbekend");
         setStudierichting("Onbekend");
     }
-    
+
     /**
      * Constructor for objects of class Student
      * @param studentnummer Studentnummer
@@ -87,5 +87,22 @@ public class Student extends Persoon
         System.out.println("# Studentnummer:\t" + getStudentnummer());
         System.out.println("# Studierichting:\t" + getStudierichting());
         System.out.println("#####");
+    }
+
+    /**
+     * Deze methode retourneert de Student als String
+     * @return String Student als string
+     */
+    @Override
+    public String toString()
+    {
+        StringBuilder result = new StringBuilder();
+        String newline = System.getProperty("line.separator");
+        //super.toString();
+        result.append("studentnummer: ");
+        result.append(getStudentnummer()).append(newline);
+        result.append("studierichting: ");
+        result.append(getStudierichting()).append(newline);
+        return result.toString();
     }
 }

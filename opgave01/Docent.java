@@ -88,5 +88,22 @@ public class Docent extends Persoon
         System.out.println("# Afdeling: " + getAfdeling());
         System.out.println("#####");
     }
+    
+    /**
+     * Retourneerd de Docent als String
+     * @return String Docent als String
+     */
+    @Override
+    public String toString()
+    {
+        StringBuilder result = new StringBuilder();
+        String newline = System.getProperty("line.separator");
+        
+        result.append("afkorting: ");
+        result.append(getAfkorting()).append(newline);
+        result.append("afdeling: ");
+        result.append(getAfdeling()).append(newline);
+        return result.toString();
+    }
 }
 
