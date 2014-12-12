@@ -261,5 +261,17 @@ public class Persoon
     public void pakDienblad(Dienblad dienblad) {
         this.dienblad = dienblad;
     }
+    
+    /**
+     * equals methode voor Persoon
+     * @param Object Het object dat je wilt vergelijken
+     */
+    @Override
+    public boolean equals(Object obj)
+    {
+        if(this == obj){
+            return true;
+        }
+    }
 
 }
