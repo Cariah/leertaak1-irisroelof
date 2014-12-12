@@ -68,7 +68,6 @@ public class KantineMedewerker extends Persoon
         this.magAchterKassa = magAchterKassa;
     }
 
-
     /**
      * Drukt alle informatie van de kantinemedewerker af
      */
@@ -78,5 +77,18 @@ public class KantineMedewerker extends Persoon
         System.out.println("# Medewerkersnummer: " + getMedewerkersnummer());
         System.out.println("# Deze persoon mag achter kassa? : " + getMagAchterKassa());
         System.out.println("#####");
+    }
+
+    public String toString()
+    {
+        StringBuilder zin = new StringBuilder();
+        zin.append(super.toString());
+        zin.append("Medewekersnummer: ").append(getMedewerkersnummer()).append("\n");
+        zin.append("Deze persoon mag achter de kassa: ").append(getMagAchterKassa()).append("\n");
+               
+        return zin.toString();
+        //super.toString();
+        //return "Medewekersnummer: " + getMedewerkersnummer() + "\n Mag deze persoon achter de kassa? " + getMagAchterKassa(); 
+        
     }
 }

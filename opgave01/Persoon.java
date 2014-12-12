@@ -120,7 +120,7 @@ public class Persoon
         }
         return temp;
     }
-    
+
     /**
      * Retourneerd de private instantie van Dienblad die
      * wordt gebruikt door de Persoon
@@ -142,6 +142,20 @@ public class Persoon
         System.out.println("# Geslacht:\t\t" + getGeslacht());
         System.out.println("# Geboortedatum:\t" + getGeboortedatum());
         System.out.println("#####");
+    }
+
+    public String toString()
+    {
+        StringBuilder zin = new StringBuilder();
+        zin.append("BSN: ").append(getBsn()).append("\n");
+        zin.append("Voornaam").append(getVoornaam()).append("\n");
+        zin.append("Achternaam").append(getAchternaam()).append("\n");
+        zin.append("Geslacht").append(getGeslacht()).append("\n");
+        zin.append("Geboortedatum").append(getGeboortedatum()).append("\n");
+        
+        return zin.toString();
+        
+        //return "BSN: " + getBsn() +  "\n Voornaam:  "  + getVoornaam() + "\n Achternaam: " + getAchternaam() + "\n Geslacht: " + getGeslacht() + "\n Geboortedatum: " + getGeboortedatum()  + " "; 
     }
 
     /**
@@ -245,7 +259,5 @@ public class Persoon
     public void pakDienblad(Dienblad dienblad) {
         this.dienblad = dienblad;
     }
-
-
 
 }

@@ -88,4 +88,15 @@ public class Student extends Persoon
         System.out.println("# Studierichting:\t" + getStudierichting());
         System.out.println("#####");
     }
+
+    public String toString()
+    {   
+        StringBuilder zin = new StringBuilder();
+        zin.append(super.toString());
+        zin.append("Studentnummer: ").append(getStudentnummer()).append("\n");
+        zin.append("Studierichting: ").append(getStudierichting()).append("\n");
+        
+        return zin.toString();
+        //return   super.toString() + "Studentnummer: " +getStudentnummer()+"\n Studierichting : " + getStudierichting();
+    }
 }

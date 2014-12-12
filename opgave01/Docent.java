@@ -21,7 +21,7 @@ public class Docent extends Persoon
         setAfkorting("Onbekend");
         setAfdeling("Onbekend");
     }
-    
+
     /**
      * Constructor for objects of class Docent
      * @param afkorting - de afkorting van de docent
@@ -87,6 +87,17 @@ public class Docent extends Persoon
         System.out.println("# Afkorting: " + getAfkorting());
         System.out.println("# Afdeling: " + getAfdeling());
         System.out.println("#####");
+    }
+
+    public String toString()
+    {
+        StringBuilder zin = new StringBuilder();
+        zin.append(super.toString());
+        zin.append("Afkorting: ").append(getAfkorting()).append("\n");
+        zin.append("Afdeling: ").append(getAfdeling()).append("\n");
+        
+        return zin.toString();
+        //return super.toString() + "Afkorting : " + getAfkorting() + "/n Afdeling: " + getAfdeling(); 
     }
 }
 
