@@ -89,6 +89,10 @@ public class Docent extends Persoon
         System.out.println("#####");
     }
 
+    /**
+     * toString voor Docent
+     * @return String Docent als string
+     */
     public String toString()
     {
         StringBuilder zin = new StringBuilder();
@@ -97,7 +101,6 @@ public class Docent extends Persoon
         zin.append("Afdeling: ").append(getAfdeling()).append("\n");
         
         return zin.toString();
-        //return super.toString() + "Afkorting : " + getAfkorting() + "/n Afdeling: " + getAfdeling(); 
     }
 }
 

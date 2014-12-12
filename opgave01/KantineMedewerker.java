@@ -79,6 +79,10 @@ public class KantineMedewerker extends Persoon
         System.out.println("#####");
     }
 
+    /**
+     * toString voor KantineMedewerker
+     * @return String KantineMedewerker als string
+     */
     public String toString()
     {
         StringBuilder zin = new StringBuilder();
@@ -87,8 +91,5 @@ public class KantineMedewerker extends Persoon
         zin.append("Deze persoon mag achter de kassa: ").append(getMagAchterKassa()).append("\n");
                
         return zin.toString();
-        //super.toString();
-        //return "Medewekersnummer: " + getMedewerkersnummer() + "\n Mag deze persoon achter de kassa? " + getMagAchterKassa(); 
-        
     }
 }

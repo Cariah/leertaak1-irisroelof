@@ -144,6 +144,10 @@ public class Persoon
         System.out.println("#####");
     }
 
+    /**
+     * toString voor Persoon
+     * @return String Persoon als string
+     */
     public String toString()
     {
         StringBuilder zin = new StringBuilder();
@@ -154,8 +158,6 @@ public class Persoon
         zin.append("Geboortedatum").append(getGeboortedatum()).append("\n");
         
         return zin.toString();
-        
-        //return "BSN: " + getBsn() +  "\n Voornaam:  "  + getVoornaam() + "\n Achternaam: " + getAchternaam() + "\n Geslacht: " + getGeslacht() + "\n Geboortedatum: " + getGeboortedatum()  + " "; 
     }
 
     /**

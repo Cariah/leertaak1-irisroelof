@@ -89,6 +89,10 @@ public class Student extends Persoon
         System.out.println("#####");
     }
 
+    /**
+     * toString methode voor Student
+     * @return String Student als string
+     */
     public String toString()
     {   
         StringBuilder zin = new StringBuilder();
@@ -97,6 +101,5 @@ public class Student extends Persoon
         zin.append("Studierichting: ").append(getStudierichting()).append("\n");
         
         return zin.toString();
-        //return   super.toString() + "Studentnummer: " +getStudentnummer()+"\n Studierichting : " + getStudierichting();
     }
 }
