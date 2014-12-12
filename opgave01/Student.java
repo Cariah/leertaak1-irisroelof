@@ -21,7 +21,7 @@ public class Student extends Persoon
         setStudentnummer("Onbekend");
         setStudierichting("Onbekend");
     }
-
+    
     /**
      * Constructor for objects of class Student
      * @param studentnummer Studentnummer
