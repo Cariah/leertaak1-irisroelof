@@ -272,6 +272,7 @@ public class Persoon
         if(this == obj){
             return true;
         }
+        return false;
     }
 
 }
