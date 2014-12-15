@@ -286,6 +286,16 @@ public class Persoon
                 dienblad.equals(persoon.dienblad);
     }
     
-    
+    @Override
+    public int hashCode()
+    {
+        int result = 17;
+        result = 37 * result + bsn.hashCode();
+        result = 37 * result + voornaam.hashCode();
+        result = 37 * result + achternaam.hashCode();
+        //result = 37 * result + dag.hashCode();
+        
+        return result;
+    }
 
 }
