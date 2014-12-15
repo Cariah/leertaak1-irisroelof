@@ -272,7 +272,13 @@ public class Persoon
         if(this == obj){
             return true;
         }
-        return false;
+        if (!(obj instanceof Persoon)) {
+            return false;
+        }
+        Persoon persoon = (Persoon)obj;
+        return  bsn.equals(persoon.bsn) && 
+                voornaam.equals(persoon.voornaam) &&
+                achternaam.equals(persoon.achternaam);
     }
 
 }
