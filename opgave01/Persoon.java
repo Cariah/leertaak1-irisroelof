@@ -282,20 +282,29 @@ public class Persoon
                 geslacht == persoon.geslacht &&
                 dag == persoon.dag &&
                 maand == persoon.maand &&
-                jaar == persoon.jaar &&
-                dienblad.equals(persoon.dienblad);
+                jaar == persoon.jaar;
     }
     
+    /**
+     * hashCode methode voor Persoon
+     * return int hashCode van Persoon
+     HashCode staat niet in de Opdracht, maar is in de praktijk wel nodig
     @Override
-    public int hashCode()
-    {
-        int result = 17;
-        result = 37 * result + bsn.hashCode();
-        result = 37 * result + voornaam.hashCode();
-        result = 37 * result + achternaam.hashCode();
-        //result = 37 * result + dag.hashCode();
-        
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((bsn == null) ? 0 : bsn.hashCode());
+        result = prime * result + ((voornaam == null) ? 0 : voornaam.hashCode());
+        result = prime * result + ((achternaam == null) ? 0 : achternaam.hashCode());
+        result = prime * result + geslacht;
+        result = prime * result + dag;
+        result = prime * result + maand;
+        result = prime * result + jaar;
+        result = prime * result + ((dienblad == null) ? 0 : dienblad.hashCode());
         return result;
     }
+    */
+    
+    
 
 }
