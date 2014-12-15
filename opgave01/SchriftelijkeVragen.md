@@ -29,3 +29,10 @@ weer `final` in te zetten.
 
 ### Opgave 2b
 Dit zorgt ervoor dat in iedergeval de parent class goed is geinstantieerd.
+
+## Week 5
+### Opgave 1d
+Bij gebruik van == vergelijken we de verwijzing naar het object
+Bij gebruik van .equals vergelijken we de objecten inhoudelijk
+Het is dus handiger om equals te gebruiken als je Strings inhoudelijk wilt vergelijken.
+
