@@ -278,7 +278,12 @@ public class Persoon
         Persoon persoon = (Persoon)obj;
         return  bsn.equals(persoon.bsn) && 
                 voornaam.equals(persoon.voornaam) &&
-                achternaam.equals(persoon.achternaam);
+                achternaam.equals(persoon.achternaam) &&
+                geslacht == persoon.geslacht &&
+                dag == persoon.dag &&
+                maand == persoon.maand &&
+                jaar == persoon.jaar &&
+                dienblad.equals(persoon.dienblad);
     }
 
 }
