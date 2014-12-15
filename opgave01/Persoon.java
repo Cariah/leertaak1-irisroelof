@@ -285,5 +285,16 @@ public class Persoon
                 jaar == persoon.jaar &&
                 dienblad.equals(persoon.dienblad);
     }
+    
+    @Override
+    public int hashCode()
+    {
+        int result = 17;
+        result = 37 * result + bsn.hashCode();
+        result = 37 * result + voornaam.hashCode();
+        result = 37 * result + achternaam.hashCode();
+        
+        return result;
+    }
 
 }
