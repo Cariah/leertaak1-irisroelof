@@ -293,6 +293,7 @@ public class Persoon
         result = 37 * result + bsn.hashCode();
         result = 37 * result + voornaam.hashCode();
         result = 37 * result + achternaam.hashCode();
+        //result = 37 * result + dag.hashCode();
         
         return result;
     }
