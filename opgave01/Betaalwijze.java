@@ -15,8 +15,7 @@ public abstract class Betaalwijze
      * @param krediet
      */
     public void setSaldo(double saldo){
-
-        this.saldo=saldo;
+        this.saldo = saldo;
     }	
 
     /**
