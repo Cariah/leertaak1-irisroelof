@@ -12,7 +12,7 @@ public class Contant extends Betaalwijze
      * Default Constructor
      */
     public Contant(){
-        setSaldo(0);;
+        setSaldo(0);
     }
     
     /**
@@ -20,14 +20,18 @@ public class Contant extends Betaalwijze
      * @param double Saldo
      */
     public Contant(double saldo){
-        setSaldo(0);
+        setSaldo(saldo);
     }
     
     /**
      * Methode om betaling af te handelen
+     * @param double te betalen diagram
      */
     public boolean betaal(double tebetalen) {
-        // omitted
+        if(saldo >= tebetalen){
+            saldo -= tebetalen;
+            return true;
+        }
         return false;
     }
 }

@@ -34,11 +34,26 @@ public class Kassa
     public void rekenAf(Persoon persoon) {
         Dienblad dienblad = persoon.getDienblad();
         
+        double totaalprijs = 0;
+        int tekopenArtikelen = 0;
+        
         Iterator<Artikel> artikelen = dienblad.getArtikelen();
         while(artikelen.hasNext()){
             Artikel artikel = artikelen.next();
             aantalArtikelen += 1;
+            tekopenArtikelen += 1;
             geldInKassa += artikel.getPrijs();
+            
+            // Korting moet hier worden berekent
+            totaalprijs += artikel.getPrijs();
+        }
+        if(tekopenArtikelen > 0){
+            Betaalwijze betaalwijze = persoon.getBetaalwijze();
+            if(betaalwijze != null){
+                if(!betaalwijze.betaal(totaalprijs)){
+                    System.out.println("Betaling mislukt.");
+                }
+            }
         }
         
     }
