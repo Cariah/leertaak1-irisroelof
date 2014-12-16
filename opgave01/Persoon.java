@@ -143,11 +143,11 @@ public class Persoon
     
     /**
      * Setter voor betaalwijze
-     * @param b betaalwijze
+     * @param Betaalwijze betaalwijze
      */
     public void setBetaalwijze(Betaalwijze b)
     {
-        this.betaalwijze = betaalwijze; 
+        this.betaalwijze = b; 
     }
     
 
