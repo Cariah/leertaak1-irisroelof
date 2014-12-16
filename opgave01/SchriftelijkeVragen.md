@@ -36,3 +36,6 @@ Bij gebruik van == vergelijken we de verwijzing naar het object
 Bij gebruik van .equals vergelijken we de objecten inhoudelijk
 Het is dus handiger om equals te gebruiken als je Strings inhoudelijk wilt vergelijken.
 
+### Opgave 2c
+Zodat ook de subklasses deze variabele kunnen gebruiken.
+
