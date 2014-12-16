@@ -42,10 +42,13 @@ public class Kassa
             Artikel artikel = artikelen.next();
             aantalArtikelen += 1;
             tekopenArtikelen += 1;
-            // Korting moet hier worden berekent
+            
             totaalprijs += artikel.getPrijs();
             geldInKassa += artikel.getPrijs();
         }
+        
+        // Fix die korting
+        
         if(tekopenArtikelen > 0){
             Betaalwijze betaalwijze = persoon.getBetaalwijze();
             if(betaalwijze != null){

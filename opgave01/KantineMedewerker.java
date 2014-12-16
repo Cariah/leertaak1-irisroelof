@@ -6,7 +6,7 @@
  * @author Iris Meijer
  * @version 08/12/2014
  */
-public class KantineMedewerker extends Persoon
+public class KantineMedewerker extends Persoon implements KortingskaartHouder
 {
     // Instantievariabelen
     private String medewerkersnummer;
@@ -79,6 +79,18 @@ public class KantineMedewerker extends Persoon
         System.out.println("#####");
     }
 
+    /**
+     * Implementeerd de geefMaximum methode uit de Interface KortingskaartHouder
+     * @return double Maximum korting of -1
+     */
+    public double geefMaximum(){
+        return -1;
+    }
+    
+    public double geefKortingsPercentage(){
+        return 0.35;
+    }
+    
     /**
      * toString voor KantineMedewerker
      * @return String KantineMedewerker als string
