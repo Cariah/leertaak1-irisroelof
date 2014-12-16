@@ -12,7 +12,7 @@ public class Contant extends Betaalwijze
      * Default Constructor
      */
     public Contant(){
-        this.saldo = setSaldo(saldo);;
+        setSaldo(0);;
     }
     
     /**
@@ -20,7 +20,7 @@ public class Contant extends Betaalwijze
      * @param double Saldo
      */
     public Contant(double saldo){
-        this.saldo = setSaldo(saldo);
+        setSaldo(0);
     }
     
     /**

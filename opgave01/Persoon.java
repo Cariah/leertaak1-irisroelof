@@ -17,6 +17,7 @@ public class Persoon
     private int maand;
     private int jaar;
     private Dienblad dienblad;
+    private Betaalwijze betaalwijze;
 
     /**
      * Constructor voor objecten van class Persoon
@@ -130,6 +131,25 @@ public class Persoon
     {
         return this.dienblad;
     }
+    
+    /**
+     * Getter voor betaalwijze
+     * @return betaalwijze
+     */
+    public Betaalwijze getBetaalwijze()
+    {
+        return betaalwijze;
+    }
+    
+    /**
+     * Setter voor betaalwijze
+     * @param b betaalwijze
+     */
+    public void setBetaalwijze(Betaalwijze b)
+    {
+        this.betaalwijze = betaalwijze; 
+    }
+    
 
     /**
      * Deze methode drukt de instantievariabelen af
