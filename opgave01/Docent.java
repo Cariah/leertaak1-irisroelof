@@ -77,6 +77,31 @@ public class Docent extends Persoon
     {
         this.afdeling = afdeling;
     }
+    
+    /**
+     * Implementeerd de geefMaximum methode uit de Interface KortingskaartHouder
+     * @return double Maximum korting 1
+     */
+    public double geefMaximum(){
+        return 1;
+    }
+    
+    /**
+     * Implementeerd de heeftMaximum methode uit de Interface KortingskaartHouder
+     * @return boolean true
+     */
+    public boolean heeftMaximum()
+    {
+        return true;
+    }
+    
+    /**
+     * Implementeerd de geefKortingsPercentage methode uit de Interface KortingskaartHouder
+     * @return double kortingspercentage 0.25
+     */
+    public double geefKortingsPercentage(){
+        return 0.25;
+    }
 
     /**
      * Drukt alle informatie van de docent af
