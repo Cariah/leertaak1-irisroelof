@@ -154,8 +154,9 @@ public class KantineSimulatie {
 
                 // maak persoon en dienblad aan, koppel ze
                 Dienblad dienblad = new Dienblad();
+                Betaalwijze betaalwijze = new Pinpas(2, 0);
                 persoon.pakDienblad(dienblad);
-
+                persoon.setBetaalwijze(betaalwijze);
                 // bedenk hoeveel artikelen worden gepakt
                 int gepakteartikelen = getRandomValue(MIN_ARTIKELEN_PER_PERSOON, MAX_ARTIKELEN_PER_PERSOON);
 
