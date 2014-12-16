@@ -81,12 +81,25 @@ public class KantineMedewerker extends Persoon implements KortingskaartHouder
 
     /**
      * Implementeerd de geefMaximum methode uit de Interface KortingskaartHouder
-     * @return double Maximum korting of -1
+     * @return double Maximum korting 0
      */
     public double geefMaximum(){
-        return -1;
+        return 0;
     }
     
+    /**
+     * Implementeerd de heeftMaximum methode uit de Interface KortingskaartHouder
+     * @return boolean false
+     */
+    public boolean heeftMaximum()
+    {
+        return false;
+    }
+    
+    /**
+     * Implementeerd de geefKortingsPercentage methode uit de Interface KortingskaartHouder
+     * @return double kortingspercentage 0.35
+     */
     public double geefKortingsPercentage(){
         return 0.35;
     }
