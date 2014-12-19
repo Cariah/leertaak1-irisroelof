@@ -6,7 +6,7 @@
  * @author Roelof Kallenkoot
  * @version 8-12-2014
  */
-public class Docent extends Persoon
+public class Docent extends Persoon implements KortingskaartHouder
 {
     // instance variables - replace the example below with your own
     private String afkorting;
