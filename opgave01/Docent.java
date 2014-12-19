@@ -11,6 +11,9 @@ public class Docent extends Persoon implements KortingskaartHouder
     // instance variables - replace the example below with your own
     private String afkorting;
     private String afdeling;
+    private static final int MAX_KORTING = 1;
+    private static final boolean HEEFT_MAX_KORTING = true;
+    private static final double KORTINGS_PERCENTAGE = 0.25;
 
     /**
      * Constructor for objects for class Docent
@@ -80,27 +83,27 @@ public class Docent extends Persoon implements KortingskaartHouder
     
     /**
      * Implementeerd de geefMaximum methode uit de Interface KortingskaartHouder
-     * @return double Maximum korting 1
+     * @return double De maximale korting die mag worden gegeven.
      */
     public double geefMaximum(){
-        return 1;
+        return MAX_KORTING;
     }
     
     /**
      * Implementeerd de heeftMaximum methode uit de Interface KortingskaartHouder
-     * @return boolean true
+     * @return boolean Of docent een maximum korting heeft of niet. (true/false)
      */
     public boolean heeftMaximum()
     {
-        return true;
+        return HEEFT_MAX_KORTING;
     }
     
     /**
      * Implementeerd de geefKortingsPercentage methode uit de Interface KortingskaartHouder
-     * @return double kortingspercentage 0.25
+     * @return double Kortingspercentage van de Docent
      */
     public double geefKortingsPercentage(){
-        return 0.25;
+        return KORTINGS_PERCENTAGE;
     }
 
     /**

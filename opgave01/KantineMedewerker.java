@@ -11,6 +11,11 @@ public class KantineMedewerker extends Persoon implements KortingskaartHouder
     // Instantievariabelen
     private String medewerkersnummer;
     private boolean magAchterKassa;
+    
+    private static final int MAX_KORTING = 0;
+    private static final boolean HEEFT_MAX_KORTING = false;
+    private static final double KORTINGS_PERCENTAGE = 0.35;
+
 
     public KantineMedewerker()
     {
@@ -81,27 +86,27 @@ public class KantineMedewerker extends Persoon implements KortingskaartHouder
 
     /**
      * Implementeerd de geefMaximum methode uit de Interface KortingskaartHouder
-     * @return double Maximum korting 0
+     * @return double De maximale korting die mag worden gegeven.
      */
     public double geefMaximum(){
-        return 0;
+        return MAX_KORTING;
     }
     
     /**
      * Implementeerd de heeftMaximum methode uit de Interface KortingskaartHouder
-     * @return boolean false
+     * @return boolean Of kantinemedewerker een maximum korting heeft of niet. (true/false)
      */
     public boolean heeftMaximum()
     {
-        return false;
+        return HEEFT_MAX_KORTING;
     }
     
     /**
      * Implementeerd de geefKortingsPercentage methode uit de Interface KortingskaartHouder
-     * @return double kortingspercentage 0.35
+     * @return double Kortingspercentage van de Kantinemedewerker
      */
     public double geefKortingsPercentage(){
-        return 0.35;
+        return KORTINGS_PERCENTAGE;
     }
     
     /**
