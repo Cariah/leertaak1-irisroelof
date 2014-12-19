@@ -33,20 +33,20 @@ public class Kassa
      */
     public void rekenAf(Persoon persoon) {
         Dienblad dienblad = persoon.getDienblad();
-        
+
         double totaalprijs = 0;
         int tekopenArtikelen = 0;
-        
+
         Iterator<Artikel> artikelen = dienblad.getArtikelen();
         while(artikelen.hasNext()){
             Artikel artikel = artikelen.next();
             aantalArtikelen += 1;
             tekopenArtikelen += 1;
-            
+
             totaalprijs += artikel.getPrijs();
             geldInKassa += artikel.getPrijs();
         }
-        
+       
         // KortingskaartHouder gedeelte
         if(persoon instanceof KortingskaartHouder){
             KortingskaartHouder persoonMetKorting = (KortingskaartHouder)persoon;
@@ -70,6 +70,7 @@ public class Kassa
             }
         }
         
+
         if(tekopenArtikelen > 0){
             Betaalwijze betaalwijze = persoon.getBetaalwijze();
             if(betaalwijze != null){
@@ -78,7 +79,7 @@ public class Kassa
                 }
             }
         }
-        
+
     }
 
     /**
