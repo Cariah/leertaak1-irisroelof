@@ -47,7 +47,26 @@ public class Kassa
             geldInKassa += artikel.getPrijs();
         }
         
-        // Fix die korting
+        // KortingskaartHouder gedeelte
+        if(persoon instanceof KortingskaartHouder){
+            KortingskaartHouder persoonMetKorting = (KortingskaartHouder)persoon;
+            if(persoonMetKorting.heeftMaximum()){
+                double kortingPerc = persoonMetKorting.geefKortingsPercentage();
+                double korting = totaalprijs * kortingPerc;
+                double maxKorting = persoonMetKorting.geefMaximum();
+                // Als de korting hoger is dan de "Maximale korting"
+                // geven we de maximale korting
+                if(korting > maxKorting){
+                    totaalprijs -= maxKorting;
+                } else {
+                    totaalprijs = totaalprijs - totaalprijs * kortingPerc;
+                }
+            } 
+            // Geen limiet aan korting
+            else {
+                totaalprijs = totaalprijs - totaalprijs * persoonMetKorting.geefKortingsPercentage();
+            }
+        }
         
         if(tekopenArtikelen > 0){
             Betaalwijze betaalwijze = persoon.getBetaalwijze();
