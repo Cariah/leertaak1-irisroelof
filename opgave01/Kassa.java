@@ -50,21 +50,23 @@ public class Kassa
         // KortingskaartHouder gedeelte
         if(persoon instanceof KortingskaartHouder){
             KortingskaartHouder persoonMetKorting = (KortingskaartHouder)persoon;
+            
+            double kortingsPerc = persoonMetKorting.geefKortingsPercentage();
+            double korting = totaalprijs * kortingsPerc;
+            
             if(persoonMetKorting.heeftMaximum()){
-                double kortingPerc = persoonMetKorting.geefKortingsPercentage();
-                double korting = totaalprijs * kortingPerc;
                 double maxKorting = persoonMetKorting.geefMaximum();
                 // Als de korting hoger is dan de "Maximale korting"
                 // geven we de maximale korting
                 if(korting > maxKorting){
                     totaalprijs -= maxKorting;
                 } else {
-                    totaalprijs = totaalprijs - totaalprijs * kortingPerc;
+                    totaalprijs = totaalprijs - korting;
                 }
             } 
             // Geen limiet aan korting
             else {
-                totaalprijs = totaalprijs - totaalprijs * persoonMetKorting.geefKortingsPercentage();
+                totaalprijs = totaalprijs - korting;
             }
         }
         
