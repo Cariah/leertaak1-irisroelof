@@ -44,6 +44,11 @@ public class KantineSimulatie {
     // minimum en maximum artikelen per persoon
     private static final int MIN_ARTIKELEN_PER_PERSOON = 1;
     private static final int MAX_ARTIKELEN_PER_PERSOON = 4;
+    
+    // Percentages voor het maken "random" Persoon objecten
+    private static final double STUDENT_KANS_PERC = 0.89;
+    private static final double DOCENT_KANS_PERC = 0.99;
+    
 
     /**
      * Constructor
@@ -139,13 +144,13 @@ public class KantineSimulatie {
                 // Opgave 4
                 int random = getRandomValue(MIN_PERSONEN_PER_DAG, MAX_PERSONEN_PER_DAG);
 
-                if(random <= MAX_PERSONEN_PER_DAG * 0.89){
+                if(random <= MAX_PERSONEN_PER_DAG * STUDENT_KANS_PERC){
                     persoon = new Student();
                 }
-                else if(random > MAX_PERSONEN_PER_DAG * 0.89 && random <= MAX_PERSONEN_PER_DAG * 0.99){
+                else if(random > MAX_PERSONEN_PER_DAG * STUDENT_KANS_PERC && random <= MAX_PERSONEN_PER_DAG * DOCENT_KANS_PERC){
                     persoon = new Docent();
                 }
-                else if(random > MAX_PERSONEN_PER_DAG * 0.99) {
+                else if(random > MAX_PERSONEN_PER_DAG * DOCENT_KANS_PERC) {
                     persoon = new KantineMedewerker();
                 }
                 else {
