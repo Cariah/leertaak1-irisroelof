@@ -107,17 +107,6 @@ public class Docent extends Persoon implements KortingskaartHouder
     }
 
     /**
-     * Drukt alle informatie van de docent af
-     */
-    public void drukAf()
-    {
-        System.out.println("#####");
-        System.out.println("# Afkorting: " + getAfkorting());
-        System.out.println("# Afdeling: " + getAfdeling());
-        System.out.println("#####");
-    }
-
-    /**
      * toString voor Docent
      * @return String Docent als string
      */

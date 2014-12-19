@@ -74,17 +74,6 @@ public class KantineMedewerker extends Persoon implements KortingskaartHouder
     }
 
     /**
-     * Drukt alle informatie van de kantinemedewerker af
-     */
-    public void drukAf()
-    {
-        System.out.println("#####");
-        System.out.println("# Medewerkersnummer: " + getMedewerkersnummer());
-        System.out.println("# Deze persoon mag achter kassa? : " + getMagAchterKassa());
-        System.out.println("#####");
-    }
-
-    /**
      * Implementeerd de geefMaximum methode uit de Interface KortingskaartHouder
      * @return double De maximale korting die mag worden gegeven.
      */
@@ -113,6 +102,7 @@ public class KantineMedewerker extends Persoon implements KortingskaartHouder
      * toString voor KantineMedewerker
      * @return String KantineMedewerker als string
      */
+    @Override
     public String toString()
     {
         StringBuilder zin = new StringBuilder();

@@ -178,8 +178,9 @@ public class KantineSimulatie {
                 // artikelen, sluit aan
                 kantine.loopPakSluitAan(persoon, artikelen);
 
-                // Opgave 3e
-                persoon.drukAf();
+                // Week 5 
+                System.out.print(persoon.toString());
+                System.out.println();
             }
 
             // Check artikelvoorraad aan het eind van de dag

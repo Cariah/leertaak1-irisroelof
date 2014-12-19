@@ -79,20 +79,10 @@ public class Student extends Persoon
     }
 
     /**
-     * Deze methode drukt de instantie- en overgeerfde variabelen af.
-     */
-    public void drukAf()
-    {
-        System.out.println("#####");
-        System.out.println("# Studentnummer:\t" + getStudentnummer());
-        System.out.println("# Studierichting:\t" + getStudierichting());
-        System.out.println("#####");
-    }
-
-    /**
      * toString methode voor Student
      * @return String Student als string
      */
+    @Override
     public String toString()
     {   
         StringBuilder zin = new StringBuilder();

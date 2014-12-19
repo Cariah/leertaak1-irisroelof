@@ -149,25 +149,12 @@ public class Persoon
     {
         this.betaalwijze = b; 
     }
-    
-
-    /**
-     * Deze methode drukt de instantievariabelen af
-     */
-    public void drukAf()
-    {
-        System.out.println("# BSN:\t\t\t" + getBsn());
-        System.out.println("# Voornaam:\t\t" + getVoornaam());
-        System.out.println("# Achternaam:\t\t" + getAchternaam());
-        System.out.println("# Geslacht:\t\t" + getGeslacht());
-        System.out.println("# Geboortedatum:\t" + getGeboortedatum());
-        System.out.println("#####");
-    }
 
     /**
      * toString voor Persoon
      * @return String Persoon als string
      */
+    @Override
     public String toString()
     {
         StringBuilder zin = new StringBuilder();
