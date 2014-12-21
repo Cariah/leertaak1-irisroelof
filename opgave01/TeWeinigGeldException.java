@@ -12,7 +12,7 @@ public class TeWeinigGeldException extends Exception
     
     public TeWeinigGeldException()
     {
-
+        super();
     }
 
     public TeWeinigGeldException(Exception e)
