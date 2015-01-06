@@ -2,7 +2,7 @@ import java.util.Iterator;
 
 /**
  * Met de klasse Kassa kunnen er kassa's aangemaakt worden
- * @author Roelof Kallenkoot 
+ * @author Roelof Kallenkoot
  * @author Iris Meijer
  * @version 25/11/2014
  */
@@ -27,7 +27,7 @@ public class Kassa
     /**
      * Telt de prijs die de persoon moet betalen bij geldInKassa op
      * Telt het aantal artikelen die de persoon koopt op bij aantalArtikelen
-     * 
+     *
      * Vanuit deze methode wordt de betaling afgehandeld
      * @param persoon die moet afrekenen
      * @throws TeWeinigGeldException
@@ -47,14 +47,14 @@ public class Kassa
             totaalprijs += artikel.getPrijs();
             geldInKassa += artikel.getPrijs();
         }
-       
+
         // KortingskaartHouder gedeelte
         if(persoon instanceof KortingskaartHouder){
             KortingskaartHouder persoonMetKorting = (KortingskaartHouder)persoon;
-            
+
             double kortingsPerc = persoonMetKorting.geefKortingsPercentage();
             double korting = totaalprijs * kortingsPerc;
-            
+
             if(persoonMetKorting.heeftMaximum()){
                 double maxKorting = persoonMetKorting.geefMaximum();
                 // Als de korting hoger is dan de "Maximale korting"
@@ -64,13 +64,13 @@ public class Kassa
                 } else {
                     totaalprijs = totaalprijs - korting;
                 }
-            } 
+            }
             // Geen limiet aan korting
             else {
                 totaalprijs = totaalprijs - korting;
             }
         }
-        
+
 
         if(tekopenArtikelen > 0){
             Betaalwijze betaalwijze = persoon.getBetaalwijze();
@@ -88,7 +88,7 @@ public class Kassa
 
     /**
      * Geeft het aantal artikelen dat de kassa
-     * heeft gepasseerd, vanaf het moment 
+     * heeft gepasseerd, vanaf het moment
      * dat de methode resetWaarden is aangeroepen.
      * @return aantal artikelen
      */
