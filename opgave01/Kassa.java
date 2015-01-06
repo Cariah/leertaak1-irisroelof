@@ -30,8 +30,9 @@ public class Kassa
      * 
      * Vanuit deze methode wordt de betaling afgehandeld
      * @param persoon die moet afrekenen
+     * @throws TeWeinigGeldException
      */
-    public void rekenAf(Persoon persoon) {
+    public void rekenAf(Persoon persoon){
         Dienblad dienblad = persoon.getDienblad();
 
         double totaalprijs = 0;
@@ -74,8 +75,11 @@ public class Kassa
         if(tekopenArtikelen > 0){
             Betaalwijze betaalwijze = persoon.getBetaalwijze();
             if(betaalwijze != null){
-                if(!betaalwijze.betaal(totaalprijs)){
-                    System.out.println("Betaling mislukt.");
+                try {
+                    betaalwijze.betaal(totaalprijs);
+                }
+                catch(TeWeinigGeldException ex){
+                    System.out.println(persoon.getVoornaam() + " " + persoon.getAchternaam());
                 }
             }
         }

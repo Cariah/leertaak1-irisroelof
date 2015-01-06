@@ -8,20 +8,29 @@
  */
 public class TeWeinigGeldException extends Exception
 {
-    private String message;
-    
+    /**
+     * Default constructor
+     */
     public TeWeinigGeldException()
     {
         super();
     }
 
+    /**
+     * 
+     * @param Exception e;
+     */
     public TeWeinigGeldException(Exception e)
     {
-        
+        super(e.getMessage());
     }
 
+    /**
+     *
+     * @param String message
+     */
     public TeWeinigGeldException(String message)
     {
-        this.message = message;
+        super(message);
     }
 }

@@ -44,11 +44,10 @@ public class KantineSimulatie {
     // minimum en maximum artikelen per persoon
     private static final int MIN_ARTIKELEN_PER_PERSOON = 1;
     private static final int MAX_ARTIKELEN_PER_PERSOON = 4;
-    
+
     // Percentages voor het maken "random" Persoon objecten
     private static final double STUDENT_KANS_PERC = 0.89;
     private static final double DOCENT_KANS_PERC = 0.99;
-    
 
     /**
      * Constructor
@@ -159,9 +158,10 @@ public class KantineSimulatie {
 
                 // maak persoon en dienblad aan, koppel ze
                 Dienblad dienblad = new Dienblad();
-                Betaalwijze betaalwijze = new Pinpas();
+                Betaalwijze betaalwijze = new Contant();
                 persoon.pakDienblad(dienblad);
                 persoon.setBetaalwijze(betaalwijze);
+                betaalwijze.setSaldo(5);
                 // bedenk hoeveel artikelen worden gepakt
                 int gepakteartikelen = getRandomValue(MIN_ARTIKELEN_PER_PERSOON, MAX_ARTIKELEN_PER_PERSOON);
 

@@ -46,8 +46,9 @@ public class Kantine
 
     /**
      * Deze methode handelt de rij voor de kassa af.
+     * @throws TeWeinigGeldException
      */
-    public void verwerkRijVoorKassa() {
+    public void verwerkRijVoorKassa(){
         /* Opgave 5b
          *
          * De while lus stopt pas wanneer er niemand meer in de KassaRij staat.

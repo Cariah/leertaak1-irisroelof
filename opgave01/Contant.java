@@ -26,12 +26,12 @@ public class Contant extends Betaalwijze
     /**
      * Methode om betaling af te handelen
      * @param double te betalen diagram
+     * @throws TeWeinigGeldException
      */
-    public boolean betaal(double tebetalen) {
-        if(saldo >= tebetalen){
-            saldo -= tebetalen;
-            return true;
+    public void betaal(double tebetalen) throws TeWeinigGeldException {
+        if(tebetalen > saldo){
+            throw new TeWeinigGeldException("Betaling mislukt");
         }
-        return false;
+        saldo -= tebetalen;
     }
 }

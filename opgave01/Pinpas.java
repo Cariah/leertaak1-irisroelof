@@ -17,7 +17,7 @@ public class Pinpas extends Betaalwijze {
         setSaldo(0);
         setKredietLimiet(150);
     }
-    
+
     /**
      * Constructor van pinpas
      * @param double saldo
@@ -39,21 +39,20 @@ public class Pinpas extends Betaalwijze {
     /**
      * Methode om betaling af te handelen
      * @param double tebetalen
+     * @throws TeWeinigGeldException
      */
-    public boolean betaal(double tebetalen) {
-        double som = saldo + kredietlimiet;
-        if(tebetalen <= som){
-            if(saldo >= tebetalen){
-                saldo-= tebetalen;
-            }
-            if((saldo - tebetalen) < 0){
-                tebetalen-= saldo;
-                setSaldo(0);
-                kredietlimiet -= tebetalen;
-            }
-            return true;
+    public void betaal(double tebetalen) throws TeWeinigGeldException {
+        double som = saldo + kredietlimiet;      
+        if(tebetalen > som){
+            throw new TeWeinigGeldException("Betaling mislukt");
         }
-        
-        return false;
+        if(saldo >= tebetalen){
+            saldo-= tebetalen;
+        }
+        if((saldo - tebetalen) < 0){
+            tebetalen-= saldo;
+            setSaldo(0);
+            kredietlimiet -= tebetalen;
+        }
     }
 }
