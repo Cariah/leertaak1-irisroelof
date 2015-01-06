@@ -165,7 +165,7 @@ public class KantineSimulatie {
                 // bedenk hoeveel artikelen worden gepakt
                 int gepakteartikelen = getRandomValue(MIN_ARTIKELEN_PER_PERSOON, MAX_ARTIKELEN_PER_PERSOON);
 
-                // genereer de “artikelnummers”, dit zijn indexen
+                // genereer de , dit zijn indexen
                 // van de artikelnamen array
                 int[] tepakken = getRandomArray(gepakteartikelen, 0, AANTAL_ARTIKELEN-1);
 
