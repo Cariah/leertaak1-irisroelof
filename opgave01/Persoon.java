@@ -159,10 +159,10 @@ public class Persoon
     {
         StringBuilder zin = new StringBuilder();
         zin.append("BSN: ").append(getBsn()).append("\n");
-        zin.append("Voornaam").append(getVoornaam()).append("\n");
-        zin.append("Achternaam").append(getAchternaam()).append("\n");
-        zin.append("Geslacht").append(getGeslacht()).append("\n");
-        zin.append("Geboortedatum").append(getGeboortedatum()).append("\n");
+        zin.append("Voornaam: ").append(getVoornaam()).append("\n");
+        zin.append("Achternaam: ").append(getAchternaam()).append("\n");
+        zin.append("Geslacht: ").append(getGeslacht()).append("\n");
+        zin.append("Geboortedatum: ").append(getGeboortedatum()).append("\n");
         
         return zin.toString();
     }

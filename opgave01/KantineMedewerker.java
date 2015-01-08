@@ -109,7 +109,6 @@ public class KantineMedewerker extends Persoon implements KortingskaartHouder
         zin.append(super.toString());
         zin.append("Medewekersnummer: ").append(getMedewerkersnummer()).append("\n");
         zin.append("Deze persoon mag achter de kassa: ").append(getMagAchterKassa()).append("\n");
-               
         return zin.toString();
     }
 }
