@@ -95,7 +95,7 @@ public class KantineSimulatieGUI extends JFrame {
             String artikelNaam = txtArtikelNaam.getText();
             double artikelPrijs = Double.parseDouble(txtArtikelPrijs.getText());
 
-            if(artikelNaam != "" && artikelNaam != null 
+            if(artikelNaam.length() > 0  && artikelNaam != null 
             && artikelPrijs != 0)
             {
                 artikelNamen.add(artikelNaam);
