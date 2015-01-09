@@ -1,5 +1,6 @@
-import javax.awt.*;
-import javax.awt.event.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class KantineSimulatieGUI extends JFrame {
 
