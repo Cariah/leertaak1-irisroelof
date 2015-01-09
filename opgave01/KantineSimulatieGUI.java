@@ -31,7 +31,7 @@ public class KantineSimulatieGUI extends JFrame {
     }
 
     private void makeFrame(){
-
+        this.setTitle("Kantine Simulatie");
         makeMenuBar();
         JPanel contentPane = (JPanel)this.getContentPane();
         contentPane.setBorder(new EmptyBorder(6,6,6,6));
@@ -60,11 +60,11 @@ public class KantineSimulatieGUI extends JFrame {
             });
         toevoegPanel.add(btnArtikelToevoegen);
         this.getRootPane().setDefaultButton(btnArtikelToevoegen);
-        
+
         contentPane.add(toevoegPanel, BorderLayout.NORTH);
 
         JPanel bottomToolbar = new JPanel();
-        bottomToolbar.setLayout(new GridLayout(0,3,6,6));
+        bottomToolbar.setLayout(new GridLayout(0,5,6,6));
 
         lblAantalDagen = new JLabel("Aantal dagen: ");
         bottomToolbar.add(lblAantalDagen);
@@ -81,7 +81,7 @@ public class KantineSimulatieGUI extends JFrame {
         bottomToolbar.add(btnSimuleer);
 
         contentPane.add(bottomToolbar, BorderLayout.SOUTH);
-
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
         setVisible(true);
     }
@@ -96,7 +96,7 @@ public class KantineSimulatieGUI extends JFrame {
             String artikelNaam = txtArtikelNaam.getText();
             double artikelPrijs = Double.parseDouble(txtArtikelPrijs.getText());
 
-            if(artikelNaam.length() > 0  && artikelNaam != null 
+            if(artikelNaam.length() > 0  && artikelNaam != null
             && artikelPrijs != 0)
             {
                 artikelNamen.add(artikelNaam);
@@ -129,11 +129,11 @@ public class KantineSimulatieGUI extends JFrame {
                 String[] namen = artikelNamen.toArray(new String[artikelNamen.size()]);
                 Double[] tempPrijzen = artikelPrijzen.toArray(new Double[artikelPrijzen.size()]);
                 double[] prijzen = new double[tempPrijzen.length];
-                
+
                 for(int i = 0; i < tempPrijzen.length; i++){
                     prijzen[i] = tempPrijzen[i];
                 }
-                
+
                 KantineSimulatie kantineSimulatie = new KantineSimulatie(namen, prijzen);
                 kantineSimulatie.simuleer(aantalDagen);
             } else {
