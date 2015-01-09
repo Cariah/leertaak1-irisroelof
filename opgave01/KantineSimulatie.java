@@ -62,6 +62,20 @@ public class KantineSimulatie {
         kantine.setKantineAanbod(kantineaanbod);
     }
 
+		public KantineSimulatie(String[] artikelNamen, double[] artikelPrijzen){
+						if(artikelNamen.length == 0 && artikelNamen.length != artikelPrijzen.length){
+										System.out.println("artikelNamen en artikelPrijzen moeten dezelfde length hebben");
+										return;
+						}
+						kantine = new Kantine();
+						random = new Random();
+						int aantalArtikelen = artikelNamen.length;
+						int[] hoeveelheden = getRandomArray(
+														aantalArtikelen, MIN_ARTIKELEN_PER_SOORT, MAX_ARTIKELEN_PER_SOORT);
+						kantineaanbod = new KantineAanbod(artikelNamen, artikelPrijzen, hoeveelheden);
+						kantine.setKantineAanbod(kantineaanbod);
+		}
+
     /**
      * Methode om een array van random getallen liggend tussen min en max
      * van de gegeven lengte te genereren
