@@ -59,7 +59,8 @@ public class KantineSimulatieGUI extends JFrame {
                 }
             });
         toevoegPanel.add(btnArtikelToevoegen);
-
+        this.getRootPane().setDefaultButton(btnArtikelToevoegen);
+        
         contentPane.add(toevoegPanel, BorderLayout.NORTH);
 
         JPanel bottomToolbar = new JPanel();
@@ -113,6 +114,7 @@ public class KantineSimulatieGUI extends JFrame {
         }
         txtArtikelNaam.setText("");
         txtArtikelPrijs.setText("");
+        txtArtikelNaam.requestFocus();
     }
 
     /**
