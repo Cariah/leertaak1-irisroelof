@@ -71,7 +71,7 @@ public class KantineSimulatieGUI extends JFrame {
         txtAantalDagen = new JTextField("");
         bottomToolbar.add(txtAantalDagen);
 
-        btnSimuleer = new JButton("Start de Simulatie!! ☺");
+        btnSimuleer = new JButton("Start de Simulatie!! :)");
         btnSimuleer.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
                     btnSimuleer_click();
