@@ -19,7 +19,8 @@ public abstract class Betaalwijze
     }
 
     /**
-     * Methode om betaling af te handelen
+     * Methode om betaling af te handelen gooit teWeinigGeldException
+     * als de persoon niet genoeg geld heeft.
      * @param tebetalen
      * @throws TeWeinigGeldException
      */
