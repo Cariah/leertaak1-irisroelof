@@ -17,7 +17,7 @@ public class TeWeinigGeldException extends Exception
     }
 
     /**
-     * 
+     * Constructor voor TeWeinigGeldException
      * @param Exception e;
      */
     public TeWeinigGeldException(Exception e)
@@ -26,7 +26,7 @@ public class TeWeinigGeldException extends Exception
     }
 
     /**
-     *
+     * Constructor voor TeWeinigGeldException
      * @param String message
      */
     public TeWeinigGeldException(String message)

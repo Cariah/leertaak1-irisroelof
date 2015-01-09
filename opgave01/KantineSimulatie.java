@@ -20,19 +20,16 @@ public class KantineSimulatie {
     private Random random;
 
     // aantal artikelen
-    private static final int AANTAL_ARTIKELEN = 4;
-
-    // bestel niveau artikelen
-    private static final int BESTEL_NIVEAU = 100;
-
+    private int AANTAL_ARTIKELEN;
     // artikelen
-    private static final String[] artikelnamen=
-        new String[] {"Koffie","Broodje hamburger", "Broodje kaas", "Melk"};
-
+    private String[] artikelnamen;
     // prijzen
-    private static double[] artikelprijzen=
-        new double[]{1.50, 2.10, 1.65, 1.65};
+    private double[] artikelprijzen;
 
+    
+     // bestel niveau artikelen
+    private static final int BESTEL_NIVEAU = 100;
+    
     // minimum en maximum aantal artikelen per soort
     private static final int MIN_ARTIKELEN_PER_SOORT = 10000;
     private static final int MAX_ARTIKELEN_PER_SOORT = 20000;
@@ -55,26 +52,43 @@ public class KantineSimulatie {
     public KantineSimulatie(){
         kantine = new Kantine();
         random = new Random();
+        
+        artikelnamen = new String[]{"Optimel", "Bami"};
+        artikelprijzen = new double[]{1.87, 2.49};
+        AANTAL_ARTIKELEN = artikelnamen.length;
+        
         int[] hoeveelheden = getRandomArray(
                 AANTAL_ARTIKELEN,MIN_ARTIKELEN_PER_SOORT, MAX_ARTIKELEN_PER_SOORT);
 
+        
         kantineaanbod = new KantineAanbod(artikelnamen, artikelprijzen, hoeveelheden);
         kantine.setKantineAanbod(kantineaanbod);
     }
 
-		public KantineSimulatie(String[] artikelNamen, double[] artikelPrijzen){
-						if(artikelNamen.length == 0 && artikelNamen.length != artikelPrijzen.length){
-										System.out.println("artikelNamen en artikelPrijzen moeten dezelfde length hebben");
-										return;
-						}
-						kantine = new Kantine();
-						random = new Random();
-						int aantalArtikelen = artikelNamen.length;
-						int[] hoeveelheden = getRandomArray(
-														aantalArtikelen, MIN_ARTIKELEN_PER_SOORT, MAX_ARTIKELEN_PER_SOORT);
-						kantineaanbod = new KantineAanbod(artikelNamen, artikelPrijzen, hoeveelheden);
-						kantine.setKantineAanbod(kantineaanbod);
-		}
+    /**
+     * Volledige constructor voor KantineSimulatie
+     * Initialiseert de KantineSimulatie met de gegeven Artikelnamen en Artikelprijzen
+     * @param String[] Namen van de artikelen
+     * @param double [] Prijzen van de artikelen
+     */
+    public KantineSimulatie(String[] artikelNamen, double[] artikelPrijzen){
+        if(artikelNamen.length == 0 && artikelNamen.length != artikelPrijzen.length){
+            System.out.println("artikelNamen en artikelPrijzen moeten dezelfde length hebben");
+            return;
+        }
+        artikelnamen = artikelNamen;
+        artikelprijzen = artikelPrijzen;
+        AANTAL_ARTIKELEN = artikelnamen.length;
+        
+        kantine = new Kantine();
+        random = new Random();
+        int aantalArtikelen = artikelNamen.length;
+        int[] hoeveelheden = getRandomArray(
+                aantalArtikelen, MIN_ARTIKELEN_PER_SOORT, MAX_ARTIKELEN_PER_SOORT);
+                
+        kantineaanbod = new KantineAanbod(artikelNamen, artikelPrijzen, hoeveelheden);
+        kantine.setKantineAanbod(kantineaanbod);
+    }
 
     /**
      * Methode om een array van random getallen liggend tussen min en max
